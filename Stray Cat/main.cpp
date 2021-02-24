@@ -11,6 +11,8 @@
 
 #define GLFW_DLL
 #include <GLFW/glfw3.h>
+#include <string>
+#include <fstream>
 
 constexpr GLsizei WINDOW_WIDTH = 1024, WINDOW_HEIGHT = 1024;
 
@@ -121,6 +123,62 @@ int initGL()
     return 0;
 }
 
+void ReadAndShowRoom(Image &screen, const char * path) {
+    std::ifstream in(path);
+    std::string room;
+    
+    if (in.is_open()) {
+        char tile;
+        while (in.get(tile)) {
+            if (tile != '\n') {
+                room.push_back(tile);
+            }
+        }
+    }
+    in.close();
+    
+    Image bush("../../Stray Cat/resources/bush.png");
+    Image carrot("../../Stray Cat/resources/carrot.png");
+    Image pit("../../Stray Cat/resources/pit.png");
+    
+    int screen_x;
+    int screen_y;
+    
+    for (int i = 0; i < room.size(); i++) {
+        switch (room[i]) {
+            case '#':
+                for (int x = 0; x < tileSize; x++) {
+                    for (int y = 0; y < tileSize; y++) {
+                        screen_x = i % 16 * tileSize + x;
+                        screen_y = (15 - i / 16) * tileSize + y;
+                        screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), bush.GetPixel(x, tileSize - y - 1)));
+                    }
+                }
+                break;
+            case ' ':
+                for (int x = 0; x < tileSize; x++) {
+                    for (int y = 0; y < tileSize; y++) {
+                        screen_x = i % 16 * tileSize + x;
+                        screen_y = (15 - i / 16) * tileSize + y;
+                        screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), pit.GetPixel(x, tileSize - y - 1)));
+                    }
+                }
+                break;
+            case 'G':
+                for (int x = 0; x < tileSize; x++) {
+                    for (int y = 0; y < tileSize; y++) {
+                        screen_x = i % 16 * tileSize + x;
+                        screen_y = (15 - i / 16) * tileSize + y;
+                        screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), carrot.GetPixel(x, tileSize - y - 1)));
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 int main(int argc, char** argv)
 {
     if(!glfwInit())
@@ -154,11 +212,19 @@ int main(int argc, char** argv)
     while (gl_error != GL_NO_ERROR)
         gl_error = glGetError();
     
-    Point starting_pos{.x = WINDOW_WIDTH / 2, .y = WINDOW_HEIGHT / 2};
+    Point starting_pos{.x = tileSize, .y = WINDOW_HEIGHT / 2 - tileSize * 3/4};
     Player player{starting_pos};
     
-    Image img("../resources/tex.png");
+    Image img("../../Stray Cat/resources/grass-background.png");
     Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
+    
+    for (int i = 0; i < WINDOW_WIDTH; i++) {
+        for (int j = 0; j < WINDOW_HEIGHT; j++) {
+            screenBuffer.PutPixel(i, j, img.GetPixel(i, WINDOW_HEIGHT - j - 1));
+        }
+    }
+    
+    ReadAndShowRoom(screenBuffer, "../../Stray Cat/rooms/N.txt");
     
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  GL_CHECK_ERRORS;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); GL_CHECK_ERRORS;

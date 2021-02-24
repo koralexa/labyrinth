@@ -29,7 +29,7 @@
 		};
 		4714C52025DE93D4007108C0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
@@ -37,7 +37,7 @@
 				4714C51F25DE93D4007108C0 /* OpenGL.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -56,7 +56,6 @@
 		4714C50025DE8E18007108C0 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../../usr/local/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		4714C50C25DE9013007108C0 /* Stray Cat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stray Cat.entitlements"; sourceTree = "<group>"; };
 		4714C51C25DE93AC007108C0 /* glad */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glad; sourceTree = "<group>"; };
-		4714C52325DE9566007108C0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +74,6 @@
 		4714C4CD25DE8B9B007108C0 = {
 			isa = PBXGroup;
 			children = (
-				4714C52325DE9566007108C0 /* .gitignore */,
 				4714C4D825DE8B9B007108C0 /* Stray Cat */,
 				4714C4D725DE8B9B007108C0 /* Products */,
 				4714C4FB25DE8DBF007108C0 /* Frameworks */,

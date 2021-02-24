@@ -3,6 +3,9 @@
 
 #include "Image.h"
 
+constexpr int playerWidth = 64;
+constexpr int playerHeight = 94;
+
 struct Point
 {
   int x;

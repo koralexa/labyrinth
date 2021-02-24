@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>1C6B41CD-BAA9-4AF5-B09D-F47BBA663B71</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>1C6B41CD-BAA9-4AF5-B09D-F47BBA663B71.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>signature</key>
+			<string>Stray_Cat-banfvakuejsteyhivbjshuwnnsvs</string>
+			<key>timeStartedRecording</key>
+			<real>635884280.30871296</real>
+			<key>timeStoppedRecording</key>
+			<real>635884283.45093799</real>
+			<key>title</key>
+			<string>Build target Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>1C6B41CD-BAA9-4AF5-B09D-F47BBA663B71</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>

@@ -3,7 +3,7 @@
 
 #include <string>
 
-constexpr int tileSize = 16;
+constexpr int tileSize = 64;
 
 struct Pixel
 {
@@ -28,8 +28,8 @@ struct Image
   size_t Size()  const { return size; }
   Pixel* Data()        { return  data; }
 
-  Pixel GetPixel(int x, int y) { return data[height * y + x];}
-  void  PutPixel(int x, int y, const Pixel &pix) { data[height * y + x] = pix; }
+  Pixel GetPixel(int x, int y) { return data[width * y + x];}
+  void  PutPixel(int x, int y, const Pixel &pix) { data[width * y + x] = pix; }
 
   ~Image();
 
@@ -42,6 +42,12 @@ private:
   bool self_allocated = false;
 };
 
-
+static Pixel Blend(Pixel old_pixel, Pixel new_pixel) {
+    new_pixel.r = new_pixel.a / 255.0 * (new_pixel.r - old_pixel.r) + old_pixel.r;
+    new_pixel.g = new_pixel.a / 255.0 * (new_pixel.g - old_pixel.g) + old_pixel.g;
+    new_pixel.b = new_pixel.a / 255.0 * (new_pixel.b - old_pixel.b) + old_pixel.b;
+    new_pixel.a = 255;
+    return new_pixel;
+}
 
 #endif //MAIN_IMAGE_H

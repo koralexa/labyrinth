@@ -1,0 +1,2561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>04F512F0-A649-4E36-817C-61202B2FF9DC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>04F512F0-A649-4E36-817C-61202B2FF9DC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635867542.63137698</real>
+			<key>timeStoppedRecording</key>
+			<real>635867546.10065198</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>04F512F0-A649-4E36-817C-61202B2FF9DC</string>
+		</dict>
+		<key>0655B813-279A-4D5E-AC3B-A0CD42F6382A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0655B813-279A-4D5E-AC3B-A0CD42F6382A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881885.57181501</real>
+			<key>timeStoppedRecording</key>
+			<real>635881889.01494801</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>0655B813-279A-4D5E-AC3B-A0CD42F6382A</string>
+		</dict>
+		<key>08877193-18EB-44D2-ACC1-6E58656E47F2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>08877193-18EB-44D2-ACC1-6E58656E47F2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875835.40011001</real>
+			<key>timeStoppedRecording</key>
+			<real>635875835.85922801</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>08877193-18EB-44D2-ACC1-6E58656E47F2</string>
+		</dict>
+		<key>0B2C2732-EFD0-40FC-8A44-FD4FF41560DB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0B2C2732-EFD0-40FC-8A44-FD4FF41560DB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635866614.70278704</real>
+			<key>timeStoppedRecording</key>
+			<real>635866618.54281604</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>0B2C2732-EFD0-40FC-8A44-FD4FF41560DB</string>
+		</dict>
+		<key>16BE2F7B-8DC1-4852-A69F-03A84F401507</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>16BE2F7B-8DC1-4852-A69F-03A84F401507.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635880100.83158195</real>
+			<key>timeStoppedRecording</key>
+			<real>635880104.926265</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>16BE2F7B-8DC1-4852-A69F-03A84F401507</string>
+		</dict>
+		<key>17F10B0D-38ED-487C-9EDA-C0DF71C682F6</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>17F10B0D-38ED-487C-9EDA-C0DF71C682F6.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635880162.91907597</real>
+			<key>timeStoppedRecording</key>
+			<real>635880166.53891397</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>17F10B0D-38ED-487C-9EDA-C0DF71C682F6</string>
+		</dict>
+		<key>1A642E1D-4755-46FB-B645-3B853706FB54</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1A642E1D-4755-46FB-B645-3B853706FB54.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635878263.86098599</real>
+			<key>timeStoppedRecording</key>
+			<real>635878267.30255699</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>1A642E1D-4755-46FB-B645-3B853706FB54</string>
+		</dict>
+		<key>1DE6E88B-9C58-4CBF-9700-17FC07CF7C8E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1DE6E88B-9C58-4CBF-9700-17FC07CF7C8E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635884130.290874</real>
+			<key>timeStoppedRecording</key>
+			<real>635884133.83938599</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>1DE6E88B-9C58-4CBF-9700-17FC07CF7C8E</string>
+		</dict>
+		<key>1E16BBA1-0A5C-460F-BAE6-B6F3FB66AB58</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1E16BBA1-0A5C-460F-BAE6-B6F3FB66AB58.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875974.22895801</real>
+			<key>timeStoppedRecording</key>
+			<real>635875974.73866701</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>1E16BBA1-0A5C-460F-BAE6-B6F3FB66AB58</string>
+		</dict>
+		<key>1EC5467B-E5FC-4CAE-85A9-3EFC833254C0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1EC5467B-E5FC-4CAE-85A9-3EFC833254C0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635867684.49031603</real>
+			<key>timeStoppedRecording</key>
+			<real>635867687.79001296</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>1EC5467B-E5FC-4CAE-85A9-3EFC833254C0</string>
+		</dict>
+		<key>24CCCCF6-BBB3-41C7-B08A-C950C85749C0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>24CCCCF6-BBB3-41C7-B08A-C950C85749C0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635878127.19979</real>
+			<key>timeStoppedRecording</key>
+			<real>635878130.93040299</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>24CCCCF6-BBB3-41C7-B08A-C950C85749C0</string>
+		</dict>
+		<key>28C07435-75A5-4D0B-B2D9-B04CB2E53AD5</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>28C07435-75A5-4D0B-B2D9-B04CB2E53AD5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875813.01864803</real>
+			<key>timeStoppedRecording</key>
+			<real>635875813.47902298</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>28C07435-75A5-4D0B-B2D9-B04CB2E53AD5</string>
+		</dict>
+		<key>2A1B910C-6BD5-476C-924C-70530AF17EFC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2A1B910C-6BD5-476C-924C-70530AF17EFC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635867096.97479403</real>
+			<key>timeStoppedRecording</key>
+			<real>635867101.58407295</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>2A1B910C-6BD5-476C-924C-70530AF17EFC</string>
+		</dict>
+		<key>2AF5AD62-73FE-4F6C-9FD2-6EE76BD04AFE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2AF5AD62-73FE-4F6C-9FD2-6EE76BD04AFE.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863523.32610404</real>
+			<key>timeStoppedRecording</key>
+			<real>635863527.56938803</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>2AF5AD62-73FE-4F6C-9FD2-6EE76BD04AFE</string>
+		</dict>
+		<key>30638249-CCBB-4F09-A398-3268B12541FC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>30638249-CCBB-4F09-A398-3268B12541FC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863906.26224995</real>
+			<key>timeStoppedRecording</key>
+			<real>635863909.33827698</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>30638249-CCBB-4F09-A398-3268B12541FC</string>
+		</dict>
+		<key>332A7C8B-3659-40B8-9E84-BDDDC4D9F2E0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>332A7C8B-3659-40B8-9E84-BDDDC4D9F2E0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635862935.10080302</real>
+			<key>timeStoppedRecording</key>
+			<real>635862939.70690894</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>332A7C8B-3659-40B8-9E84-BDDDC4D9F2E0</string>
+		</dict>
+		<key>334F4698-C17D-4E11-9AF9-0FE82C17642E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>334F4698-C17D-4E11-9AF9-0FE82C17642E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635883114.13433003</real>
+			<key>timeStoppedRecording</key>
+			<real>635883118.12487197</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>334F4698-C17D-4E11-9AF9-0FE82C17642E</string>
+		</dict>
+		<key>4220DEA9-2E69-42D3-A0A7-ACA5B1E1AC36</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>4220DEA9-2E69-42D3-A0A7-ACA5B1E1AC36.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635878168.79902196</real>
+			<key>timeStoppedRecording</key>
+			<real>635878172.22764802</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>4220DEA9-2E69-42D3-A0A7-ACA5B1E1AC36</string>
+		</dict>
+		<key>4447F4E0-9794-4AEF-A015-13FFC9F01376</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>4447F4E0-9794-4AEF-A015-13FFC9F01376.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875917.55726397</real>
+			<key>timeStoppedRecording</key>
+			<real>635875921.02272904</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>4447F4E0-9794-4AEF-A015-13FFC9F01376</string>
+		</dict>
+		<key>525F4D59-6CAB-45ED-B27E-DC541BB0C73C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>525F4D59-6CAB-45ED-B27E-DC541BB0C73C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876959.13436699</real>
+			<key>timeStoppedRecording</key>
+			<real>635876963.59764695</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>525F4D59-6CAB-45ED-B27E-DC541BB0C73C</string>
+		</dict>
+		<key>5F2C83AC-03E7-43BF-B8E1-E606DBCA56BD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5F2C83AC-03E7-43BF-B8E1-E606DBCA56BD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875847.54322898</real>
+			<key>timeStoppedRecording</key>
+			<real>635875851.495597</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>5F2C83AC-03E7-43BF-B8E1-E606DBCA56BD</string>
+		</dict>
+		<key>67900F1B-67AF-4B4E-89D1-132F65A19936</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>67900F1B-67AF-4B4E-89D1-132F65A19936.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876718.74174905</real>
+			<key>timeStoppedRecording</key>
+			<real>635876719.25308895</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>67900F1B-67AF-4B4E-89D1-132F65A19936</string>
+		</dict>
+		<key>6A6142BD-06A0-490A-B11D-F2F957A5A6A6</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6A6142BD-06A0-490A-B11D-F2F957A5A6A6.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635866820.57635701</real>
+			<key>timeStoppedRecording</key>
+			<real>635866821.37008905</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>6A6142BD-06A0-490A-B11D-F2F957A5A6A6</string>
+		</dict>
+		<key>6CD22E0D-ED93-4A6C-83E0-943AE5B9C76E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6CD22E0D-ED93-4A6C-83E0-943AE5B9C76E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635862577.88376403</real>
+			<key>timeStoppedRecording</key>
+			<real>635862578.36361504</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>6CD22E0D-ED93-4A6C-83E0-943AE5B9C76E</string>
+		</dict>
+		<key>6E11E8A5-50B2-4BEA-9ED2-AD6E30A3F804</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6E11E8A5-50B2-4BEA-9ED2-AD6E30A3F804.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635862896.09340596</real>
+			<key>timeStoppedRecording</key>
+			<real>635862900.31492698</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>6E11E8A5-50B2-4BEA-9ED2-AD6E30A3F804</string>
+		</dict>
+		<key>71C4E38E-EDFA-4081-86CE-C27F92D5D838</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>71C4E38E-EDFA-4081-86CE-C27F92D5D838.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635883398.32491505</real>
+			<key>timeStoppedRecording</key>
+			<real>635883401.86203504</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>71C4E38E-EDFA-4081-86CE-C27F92D5D838</string>
+		</dict>
+		<key>72504192-B475-4C07-88CE-5CC8801F620C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>72504192-B475-4C07-88CE-5CC8801F620C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875676.80694199</real>
+			<key>timeStoppedRecording</key>
+			<real>635875680.48380899</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>72504192-B475-4C07-88CE-5CC8801F620C</string>
+		</dict>
+		<key>7286D295-2DAC-4C12-8EC3-05DF9A764CEC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7286D295-2DAC-4C12-8EC3-05DF9A764CEC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635880142.38493001</real>
+			<key>timeStoppedRecording</key>
+			<real>635880145.87713695</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>7286D295-2DAC-4C12-8EC3-05DF9A764CEC</string>
+		</dict>
+		<key>7455F8F6-C664-4206-81B9-20E426A83491</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7455F8F6-C664-4206-81B9-20E426A83491.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635867218.40299499</real>
+			<key>timeStoppedRecording</key>
+			<real>635867221.36148095</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>7455F8F6-C664-4206-81B9-20E426A83491</string>
+		</dict>
+		<key>76F6D348-330E-4876-8334-0684B2A3860F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>76F6D348-330E-4876-8334-0684B2A3860F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635882905.62764597</real>
+			<key>timeStoppedRecording</key>
+			<real>635882909.69636905</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>76F6D348-330E-4876-8334-0684B2A3860F</string>
+		</dict>
+		<key>77BF2D15-CCB0-4B77-BB3D-0B49E040BCE1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>77BF2D15-CCB0-4B77-BB3D-0B49E040BCE1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635882439.98622894</real>
+			<key>timeStoppedRecording</key>
+			<real>635882440.48280203</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>77BF2D15-CCB0-4B77-BB3D-0B49E040BCE1</string>
+		</dict>
+		<key>78E41854-32A7-4CE7-B0F7-F98572535CA1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>78E41854-32A7-4CE7-B0F7-F98572535CA1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635866292.47793996</real>
+			<key>timeStoppedRecording</key>
+			<real>635866293.37981701</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>78E41854-32A7-4CE7-B0F7-F98572535CA1</string>
+		</dict>
+		<key>7DD13612-C725-4B48-83CB-C2613D19127E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7DD13612-C725-4B48-83CB-C2613D19127E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635883272.72555494</real>
+			<key>timeStoppedRecording</key>
+			<real>635883276.48270702</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>7DD13612-C725-4B48-83CB-C2613D19127E</string>
+		</dict>
+		<key>7F2026FC-56B6-4316-B3D8-F2A9F738FD7B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7F2026FC-56B6-4316-B3D8-F2A9F738FD7B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863498.50508702</real>
+			<key>timeStoppedRecording</key>
+			<real>635863502.92992103</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>7F2026FC-56B6-4316-B3D8-F2A9F738FD7B</string>
+		</dict>
+		<key>7F4D3FF5-837F-40F0-96D3-2B9D1F73FBAB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7F4D3FF5-837F-40F0-96D3-2B9D1F73FBAB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635862615.04741895</real>
+			<key>timeStoppedRecording</key>
+			<real>635862619.05527103</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>7F4D3FF5-837F-40F0-96D3-2B9D1F73FBAB</string>
+		</dict>
+		<key>833E8416-8936-4AFB-AE67-A14FCA092413</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>833E8416-8936-4AFB-AE67-A14FCA092413.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635865658.55195606</real>
+			<key>timeStoppedRecording</key>
+			<real>635865663.89054096</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>833E8416-8936-4AFB-AE67-A14FCA092413</string>
+		</dict>
+		<key>836736FA-6428-4E81-ADC4-3547138964BC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>836736FA-6428-4E81-ADC4-3547138964BC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881914.21821904</real>
+			<key>timeStoppedRecording</key>
+			<real>635881917.76985002</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>836736FA-6428-4E81-ADC4-3547138964BC</string>
+		</dict>
+		<key>855CADE6-94D8-4278-B1DD-1AA380D5CCF3</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>855CADE6-94D8-4278-B1DD-1AA380D5CCF3.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863865.80514896</real>
+			<key>timeStoppedRecording</key>
+			<real>635863870.15401006</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>855CADE6-94D8-4278-B1DD-1AA380D5CCF3</string>
+		</dict>
+		<key>864C5C85-C24B-42B6-B196-BB76AE9F9862</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>864C5C85-C24B-42B6-B196-BB76AE9F9862.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863725.98101795</real>
+			<key>timeStoppedRecording</key>
+			<real>635863730.18268096</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>864C5C85-C24B-42B6-B196-BB76AE9F9862</string>
+		</dict>
+		<key>880C044D-4029-4E80-8DAB-FF9332103773</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>880C044D-4029-4E80-8DAB-FF9332103773.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635879897.44839704</real>
+			<key>timeStoppedRecording</key>
+			<real>635879898.37341106</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>880C044D-4029-4E80-8DAB-FF9332103773</string>
+		</dict>
+		<key>888E64DF-584E-4624-9DE5-4006B3098C34</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>888E64DF-584E-4624-9DE5-4006B3098C34.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635878711.78525496</real>
+			<key>timeStoppedRecording</key>
+			<real>635878712.30936897</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>888E64DF-584E-4624-9DE5-4006B3098C34</string>
+		</dict>
+		<key>8C1F1EAB-E39B-48B0-9D99-3C5E098F37B2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>8C1F1EAB-E39B-48B0-9D99-3C5E098F37B2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881947.58614302</real>
+			<key>timeStoppedRecording</key>
+			<real>635881948.80602801</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>8C1F1EAB-E39B-48B0-9D99-3C5E098F37B2</string>
+		</dict>
+		<key>8D003E13-36B9-4295-AFF4-337A4542DB89</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>8D003E13-36B9-4295-AFF4-337A4542DB89.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635878485.45023894</real>
+			<key>timeStoppedRecording</key>
+			<real>635878488.95555496</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>8D003E13-36B9-4295-AFF4-337A4542DB89</string>
+		</dict>
+		<key>957D042C-9DEB-4567-A95D-335AE52D2628</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>957D042C-9DEB-4567-A95D-335AE52D2628.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635878422.91556799</real>
+			<key>timeStoppedRecording</key>
+			<real>635878426.731529</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>957D042C-9DEB-4567-A95D-335AE52D2628</string>
+		</dict>
+		<key>9815E7C6-F5F3-48BE-8622-3748B757F452</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9815E7C6-F5F3-48BE-8622-3748B757F452.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635883861.49281096</real>
+			<key>timeStoppedRecording</key>
+			<real>635883865.25986505</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>9815E7C6-F5F3-48BE-8622-3748B757F452</string>
+		</dict>
+		<key>9A19C37E-872D-4D12-B2A1-098A77ADF93D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9A19C37E-872D-4D12-B2A1-098A77ADF93D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876306.33519304</real>
+			<key>timeStoppedRecording</key>
+			<real>635876309.95407498</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>9A19C37E-872D-4D12-B2A1-098A77ADF93D</string>
+		</dict>
+		<key>A1B7C6CE-9485-4509-B917-976254C75A22</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A1B7C6CE-9485-4509-B917-976254C75A22.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863121.16810298</real>
+			<key>timeStoppedRecording</key>
+			<real>635863124.54893601</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>A1B7C6CE-9485-4509-B917-976254C75A22</string>
+		</dict>
+		<key>A230B29B-AA6C-4C3B-9FF7-75FFDCD0DE14</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A230B29B-AA6C-4C3B-9FF7-75FFDCD0DE14.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635884279.83846104</real>
+			<key>timeStoppedRecording</key>
+			<real>635884283.45855296</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>A230B29B-AA6C-4C3B-9FF7-75FFDCD0DE14</string>
+		</dict>
+		<key>A6AD8B25-6D72-4550-8611-2A47C00E76BE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A6AD8B25-6D72-4550-8611-2A47C00E76BE.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876197.29312396</real>
+			<key>timeStoppedRecording</key>
+			<real>635876201.41962504</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>A6AD8B25-6D72-4550-8611-2A47C00E76BE</string>
+		</dict>
+		<key>A72FC164-4D70-468B-895E-8983248FC1B4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A72FC164-4D70-468B-895E-8983248FC1B4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635877906.69977498</real>
+			<key>timeStoppedRecording</key>
+			<real>635877914.58988702</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>A72FC164-4D70-468B-895E-8983248FC1B4</string>
+		</dict>
+		<key>B18D199F-C8E2-4023-956A-EB459C67A30B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B18D199F-C8E2-4023-956A-EB459C67A30B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881897.60950005</real>
+			<key>timeStoppedRecording</key>
+			<real>635881901.07708395</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>B18D199F-C8E2-4023-956A-EB459C67A30B</string>
+		</dict>
+		<key>B2C92F1B-DD70-4A73-B088-80DCA63B6380</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B2C92F1B-DD70-4A73-B088-80DCA63B6380.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881767.15060496</real>
+			<key>timeStoppedRecording</key>
+			<real>635881772.80124104</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>B2C92F1B-DD70-4A73-B088-80DCA63B6380</string>
+		</dict>
+		<key>B535B04D-89A5-467D-978A-8ED9C67A1B35</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B535B04D-89A5-467D-978A-8ED9C67A1B35.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635866593.611395</real>
+			<key>timeStoppedRecording</key>
+			<real>635866595.23499</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>B535B04D-89A5-467D-978A-8ED9C67A1B35</string>
+		</dict>
+		<key>B5A7C928-F431-4AD1-8924-8DE419863459</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B5A7C928-F431-4AD1-8924-8DE419863459.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876396.00999999</real>
+			<key>timeStoppedRecording</key>
+			<real>635876399.79939795</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>B5A7C928-F431-4AD1-8924-8DE419863459</string>
+		</dict>
+		<key>B77E85ED-BF86-4C77-AF61-F65F79E6C6A4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B77E85ED-BF86-4C77-AF61-F65F79E6C6A4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863673.13289499</real>
+			<key>timeStoppedRecording</key>
+			<real>635863677.85792696</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>B77E85ED-BF86-4C77-AF61-F65F79E6C6A4</string>
+		</dict>
+		<key>B988E789-5137-4B1F-BA8E-0DF84C13BEDA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B988E789-5137-4B1F-BA8E-0DF84C13BEDA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635883993.61742103</real>
+			<key>timeStoppedRecording</key>
+			<real>635883997.25186598</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>B988E789-5137-4B1F-BA8E-0DF84C13BEDA</string>
+		</dict>
+		<key>BB01179A-B596-461E-8531-88ECF9FDFF8A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BB01179A-B596-461E-8531-88ECF9FDFF8A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875771.37134004</real>
+			<key>timeStoppedRecording</key>
+			<real>635875772.21755302</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>BB01179A-B596-461E-8531-88ECF9FDFF8A</string>
+		</dict>
+		<key>C1ABAD17-39A5-486A-BB54-35C9587C99A4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C1ABAD17-39A5-486A-BB54-35C9587C99A4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876279.81937504</real>
+			<key>timeStoppedRecording</key>
+			<real>635876281.23386204</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>C1ABAD17-39A5-486A-BB54-35C9587C99A4</string>
+		</dict>
+		<key>C63F4B08-ACF2-4B8B-9360-C5A30B4A9508</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C63F4B08-ACF2-4B8B-9360-C5A30B4A9508.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635866719.32388401</real>
+			<key>timeStoppedRecording</key>
+			<real>635866719.89826405</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>C63F4B08-ACF2-4B8B-9360-C5A30B4A9508</string>
+		</dict>
+		<key>CFB4474E-0F8E-42C1-9269-745015BDCF30</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>CFB4474E-0F8E-42C1-9269-745015BDCF30.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635877991.63128698</real>
+			<key>timeStoppedRecording</key>
+			<real>635877995.20461404</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>CFB4474E-0F8E-42C1-9269-745015BDCF30</string>
+		</dict>
+		<key>D2D5A3A8-74FA-419C-A6AE-0492B6143953</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D2D5A3A8-74FA-419C-A6AE-0492B6143953.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635875708.34535098</real>
+			<key>timeStoppedRecording</key>
+			<real>635875712.25369596</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>D2D5A3A8-74FA-419C-A6AE-0492B6143953</string>
+		</dict>
+		<key>D4B6D479-3B08-45A4-8EFE-2058B1C8746F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D4B6D479-3B08-45A4-8EFE-2058B1C8746F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635877026.80662405</real>
+			<key>timeStoppedRecording</key>
+			<real>635877030.21028101</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>D4B6D479-3B08-45A4-8EFE-2058B1C8746F</string>
+		</dict>
+		<key>D51D7F1D-4153-467B-A1BA-D46A5D8E0EA1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D51D7F1D-4153-467B-A1BA-D46A5D8E0EA1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635863398.26362205</real>
+			<key>timeStoppedRecording</key>
+			<real>635863403.02573097</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>D51D7F1D-4153-467B-A1BA-D46A5D8E0EA1</string>
+		</dict>
+		<key>D8C6A45E-5A88-466D-9084-30AC5E337B7C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D8C6A45E-5A88-466D-9084-30AC5E337B7C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635880258.48616397</real>
+			<key>timeStoppedRecording</key>
+			<real>635880261.96569502</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>D8C6A45E-5A88-466D-9084-30AC5E337B7C</string>
+		</dict>
+		<key>DA86E3F8-EB65-4F89-A410-E184184C7039</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DA86E3F8-EB65-4F89-A410-E184184C7039.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635883528.93982399</real>
+			<key>timeStoppedRecording</key>
+			<real>635883532.51017702</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>DA86E3F8-EB65-4F89-A410-E184184C7039</string>
+		</dict>
+		<key>E169FA2F-18CC-4CC1-903C-94025A0126FB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E169FA2F-18CC-4CC1-903C-94025A0126FB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635880018.03289497</real>
+			<key>timeStoppedRecording</key>
+			<real>635880018.81730103</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>E169FA2F-18CC-4CC1-903C-94025A0126FB</string>
+		</dict>
+		<key>E2B13361-BF98-4090-B26C-4E78EAF4A163</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E2B13361-BF98-4090-B26C-4E78EAF4A163.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881973.93060303</real>
+			<key>timeStoppedRecording</key>
+			<real>635881977.48180199</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>E2B13361-BF98-4090-B26C-4E78EAF4A163</string>
+		</dict>
+		<key>E46B252B-6E8C-4556-885B-F2A47905EE70</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E46B252B-6E8C-4556-885B-F2A47905EE70.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635862266.10220695</real>
+			<key>timeStoppedRecording</key>
+			<real>635862268.06332302</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>E46B252B-6E8C-4556-885B-F2A47905EE70</string>
+		</dict>
+		<key>E65103A3-1F48-4511-94F4-7B5D3ADCD314</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E65103A3-1F48-4511-94F4-7B5D3ADCD314.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635882384.60840094</real>
+			<key>timeStoppedRecording</key>
+			<real>635882388.20178294</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>E65103A3-1F48-4511-94F4-7B5D3ADCD314</string>
+		</dict>
+		<key>E77F8154-0386-40D4-8BD9-06B397085541</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E77F8154-0386-40D4-8BD9-06B397085541.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635882680.51184106</real>
+			<key>timeStoppedRecording</key>
+			<real>635882684.18643796</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>E77F8154-0386-40D4-8BD9-06B397085541</string>
+		</dict>
+		<key>EB859C5B-38B1-4CDA-B0FE-CDB46968164C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EB859C5B-38B1-4CDA-B0FE-CDB46968164C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635877177.01955402</real>
+			<key>timeStoppedRecording</key>
+			<real>635877178.20174801</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>EB859C5B-38B1-4CDA-B0FE-CDB46968164C</string>
+		</dict>
+		<key>F2FFAA95-69AE-4DFF-B608-F3C256EDB704</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F2FFAA95-69AE-4DFF-B608-F3C256EDB704.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635865851.66976595</real>
+			<key>timeStoppedRecording</key>
+			<real>635865856.32953894</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>F2FFAA95-69AE-4DFF-B608-F3C256EDB704</string>
+		</dict>
+		<key>F5ADEB1A-59F5-43FA-8DBF-0FB90717623F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F5ADEB1A-59F5-43FA-8DBF-0FB90717623F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635881860.55635798</real>
+			<key>timeStoppedRecording</key>
+			<real>635881864.25884604</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>F5ADEB1A-59F5-43FA-8DBF-0FB90717623F</string>
+		</dict>
+		<key>F663B078-1613-4731-8065-A1C373D3169F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F663B078-1613-4731-8065-A1C373D3169F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876671.78781104</real>
+			<key>timeStoppedRecording</key>
+			<real>635876677.51854706</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>F663B078-1613-4731-8065-A1C373D3169F</string>
+		</dict>
+		<key>FAB5728B-0DA1-4B33-8760-5668E31EDCAC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FAB5728B-0DA1-4B33-8760-5668E31EDCAC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Stray Cat project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Stray Cat</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Stray Cat</string>
+			<key>timeStartedRecording</key>
+			<real>635876752.69061196</real>
+			<key>timeStoppedRecording</key>
+			<real>635876758.28524196</real>
+			<key>title</key>
+			<string>Build Stray Cat</string>
+			<key>uniqueIdentifier</key>
+			<string>FAB5728B-0DA1-4B33-8760-5668E31EDCAC</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

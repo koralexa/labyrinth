@@ -1,5 +1,6 @@
 #include "Player.h"
-
+Image player_img("../../Stray Cat/resources/player.png");
+Image static_background("../../Stray Cat/resources/grass-background.png");
 
 bool Player::Moved() const
 {
@@ -39,21 +40,21 @@ void Player::Draw(Image &screen)
 {
   if(Moved())
   {
-    for(int y = old_coords.y; y <= old_coords.y + tileSize; ++y)
+    for(int y = old_coords.y; y < old_coords.y + playerHeight; ++y)
     {
-      for(int x = old_coords.x; x <= old_coords.x + tileSize; ++x)
+      for(int x = old_coords.x; x < old_coords.x + playerWidth; ++x)
       {
-        screen.PutPixel(x, y, backgroundColor);
+        screen.PutPixel(x, y, static_background.GetPixel(x, static_background.Height() - y - 1));
       }
     }
     old_coords = coords;
   }
 
-  for(int y = coords.y; y <= coords.y + tileSize; ++y)
+  for(int y = coords.y; y < coords.y + playerHeight; ++y)
   {
-    for(int x = coords.x; x <= coords.x + tileSize; ++x)
+    for(int x = coords.x; x < coords.x + playerWidth; ++x)
     {
-      screen.PutPixel(x, y, color);
+      screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), player_img.GetPixel(x - coords.x, playerHeight - (y - coords.y) - 1)));
     }
   }
 }
