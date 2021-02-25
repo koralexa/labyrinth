@@ -52,16 +52,16 @@ void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, in
     }
 }
 
-void processPlayerMovement(Player &player)
+void processPlayerMovement(Player &player, std::string &room)
 {
     if (Input.keys[GLFW_KEY_W])
-        player.ProcessInput(MovementDir::UP);
+        player.ProcessInput(MovementDir::UP, room);
     else if (Input.keys[GLFW_KEY_S])
-        player.ProcessInput(MovementDir::DOWN);
+        player.ProcessInput(MovementDir::DOWN, room);
     if (Input.keys[GLFW_KEY_A])
-        player.ProcessInput(MovementDir::LEFT);
+        player.ProcessInput(MovementDir::LEFT, room);
     else if (Input.keys[GLFW_KEY_D])
-        player.ProcessInput(MovementDir::RIGHT);
+        player.ProcessInput(MovementDir::RIGHT, room);
 }
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)
@@ -123,7 +123,7 @@ int initGL()
     return 0;
 }
 
-void ReadAndShowRoom(Image &screen, const char * path) {
+std::string ReadAndShowRoom(Image &screen, const char * path) {
     std::ifstream in(path);
     std::string room;
     
@@ -140,6 +140,10 @@ void ReadAndShowRoom(Image &screen, const char * path) {
     Image bush("../../Stray Cat/resources/bush.png");
     Image carrot("../../Stray Cat/resources/carrot.png");
     Image pit("../../Stray Cat/resources/pit.png");
+    Image portal_down("../../Stray Cat/resources/portal_down.png");
+    Image portal_up("../../Stray Cat/resources/portal_up.png");
+    Image portal_right("../../Stray Cat/resources/portal_right.png");
+    Image portal_left("../../Stray Cat/resources/portal_left.png");
     
     int screen_x;
     int screen_y;
@@ -173,10 +177,54 @@ void ReadAndShowRoom(Image &screen, const char * path) {
                     }
                 }
                 break;
+            case 'X':
+                if ((room[i + 1] == 'X') && (i < 16)) {
+                    for (int x = 0; x < tileSize * 2; x++) {
+                        for (int y = 0; y < tileSize; y++) {
+                            screen_x = i % 16 * tileSize + x;
+                            screen_y = (15 - i / 16) * tileSize + y;
+                            screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), portal_up.GetPixel(x, tileSize - y - 1)));
+                        }
+                    }
+                    break;
+                }
+                if ((room[i + 1] == 'X') && (i >= 16)) {
+                    for (int x = 0; x < tileSize * 2; x++) {
+                        for (int y = 0; y < tileSize; y++) {
+                            screen_x = i % 16 * tileSize + x;
+                            screen_y = (15 - i / 16) * tileSize + y;
+                            screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), portal_down.GetPixel(x, tileSize - y - 1)));
+                        }
+                    }
+                    break;
+                }
+                if ((room[i + 16] == 'X') && (i % 16 < 8)) {
+                    for (int x = 0; x < tileSize; x++) {
+                        for (int y = 0; y < tileSize * 2; y++) {
+                            screen_x = i % 16 * tileSize + x;
+                            screen_y = (14 - i / 16) * tileSize + y;
+                            screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), portal_left.GetPixel(x, tileSize * 2 - y - 1)));
+                        }
+                    }
+                    break;
+                }
+                if ((room[i + 16] == 'X') && (i % 16 >= 8)) {
+                    for (int x = 0; x < tileSize; x++) {
+                        for (int y = 0; y < tileSize * 2; y++) {
+                            screen_x = i % 16 * tileSize + x;
+                            screen_y = (14 - i / 16) * tileSize + y;
+                            screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y), portal_right.GetPixel(x, tileSize * 2 - y - 1)));
+                        }
+                    }
+                    break;
+                }
+                break;
             default:
                 break;
         }
     }
+    
+    return room;
 }
 
 int main(int argc, char** argv)
@@ -224,7 +272,7 @@ int main(int argc, char** argv)
         }
     }
     
-    ReadAndShowRoom(screenBuffer, "../../Stray Cat/rooms/N.txt");
+    std::string currentRoom = ReadAndShowRoom(screenBuffer, "../../Stray Cat/rooms/E.txt");
     
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  GL_CHECK_ERRORS;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); GL_CHECK_ERRORS;
@@ -237,7 +285,7 @@ int main(int argc, char** argv)
         lastFrame = currentFrame;
         glfwPollEvents();
         
-        processPlayerMovement(player);
+        processPlayerMovement(player, currentRoom);
         player.Draw(screenBuffer);
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;

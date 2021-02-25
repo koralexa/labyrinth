@@ -1,4 +1,7 @@
 #include "Player.h"
+
+#include <iostream>
+
 Image player_img("../../Stray Cat/resources/player.png");
 Image static_background("../../Stray Cat/resources/grass-background.png");
 
@@ -10,26 +13,185 @@ bool Player::Moved() const
     return true;
 }
 
-void Player::ProcessInput(MovementDir dir)
+PlayerState CheckTilesUp(int move_dist, Point old_coords, std::string &room) {
+    Point new_coords {.x = old_coords.x, .y = old_coords.y + move_dist};
+    int tile_x = new_coords.x / tileSize;
+    int tile_y = 15 - (new_coords.y + playerHeight) / tileSize; // new left up tile of player
+    
+    switch (room[tile_y * 16 + tile_x]) {
+        case '#':
+            return PlayerState::STAY;
+            break;
+        case ' ':
+            return PlayerState::DIE;
+            break;
+        default:
+            break;
+    }
+    
+    if (new_coords.x % tileSize != 0) {
+        switch (room[tile_y * 16 + tile_x + 1]) {
+            case '#':
+                return PlayerState::STAY;
+                break;
+            case ' ':
+                return PlayerState::DIE;
+                break;
+            default:
+                break;
+        }
+    }
+    
+    return PlayerState::MOVE;
+}
+
+PlayerState CheckTilesDown(int move_dist, Point old_coords, std::string &room) {
+    Point new_coords {.x = old_coords.x, .y = old_coords.y - move_dist};
+    int tile_x = new_coords.x / tileSize;
+    int tile_y = 15 - new_coords.y / tileSize; // new left down tile of player
+    
+    switch (room[tile_y * 16 + tile_x]) {
+        case '#':
+            return PlayerState::STAY;
+            break;
+        case ' ':
+            return PlayerState::DIE;
+            break;
+        default:
+            break;
+    }
+    
+    if (new_coords.x % tileSize != 0) {
+        switch (room[tile_y * 16 + tile_x + 1]) {
+            case '#':
+                return PlayerState::STAY;
+                break;
+            case ' ':
+                return PlayerState::DIE;
+                break;
+            default:
+                break;
+        }
+    }
+   
+    return PlayerState::MOVE;
+}
+
+PlayerState CheckTilesLeft(int move_dist, Point old_coords, std::string &room) {
+    Point new_coords {.x = old_coords.x - move_dist, .y = old_coords.y};
+    int tile_x = new_coords.x / tileSize;
+    int tile_y = 15 - new_coords.y / tileSize; // new left down tile of player
+    
+    switch (room[tile_y * 16 + tile_x]) {
+        case '#':
+            return PlayerState::STAY;
+            break;
+        case ' ':
+            return PlayerState::DIE;
+            break;
+        default:
+            break;
+    }
+    
+    switch (room[(tile_y - 1) * 16 + tile_x]) {
+        case '#':
+            return PlayerState::STAY;
+            break;
+        case ' ':
+            return PlayerState::DIE;
+            break;
+        default:
+            break;
+    }
+    
+    if (new_coords.y % tileSize > tileSize * 2 - playerHeight) {
+        switch (room[(tile_y - 2) * 16 + tile_x]) {
+            case '#':
+                return PlayerState::STAY;
+                break;
+            case ' ':
+                return PlayerState::DIE;
+                break;
+            default:
+                break;
+        }
+    }
+
+    return PlayerState::MOVE;
+}
+
+PlayerState CheckTilesRight(int move_dist, Point old_coords, std::string &room) {
+    Point new_coords {.x = old_coords.x + move_dist, .y = old_coords.y};
+    int tile_x = new_coords.x / tileSize + 1;
+    int tile_y = 15 - new_coords.y / tileSize; // new right down tile of player
+
+    switch (room[tile_y * 16 + tile_x]) {
+        case '#':
+            return PlayerState::STAY;
+            break;
+        case ' ':
+            return PlayerState::DIE;
+            break;
+        default:
+            break;
+    }
+    
+    switch (room[(tile_y - 1) * 16 + tile_x]) {
+        case '#':
+            return PlayerState::STAY;
+            break;
+        case ' ':
+            return PlayerState::DIE;
+            break;
+        default:
+            break;
+    }
+    
+    if (new_coords.y % tileSize > tileSize * 2 - playerHeight) {
+        switch (room[(tile_y - 2) * 16 + tile_x]) {
+            case '#':
+                return PlayerState::STAY;
+                break;
+            case ' ':
+                return PlayerState::DIE;
+                break;
+            default:
+                break;
+        }
+    }
+    
+    return PlayerState::MOVE;
+}
+
+void Player::ProcessInput(MovementDir dir, std::string &room)
 {
   int move_dist = move_speed * 1;
+    
   switch(dir)
   {
     case MovementDir::UP:
-      old_coords.y = coords.y;
-      coords.y += move_dist;
+      if (CheckTilesUp(move_dist, coords, room) == PlayerState::MOVE) {
+          old_coords.y = coords.y;
+          coords.y += move_dist;
+      }
       break;
     case MovementDir::DOWN:
-      old_coords.y = coords.y;
-      coords.y -= move_dist;
+      if (CheckTilesDown(move_dist, coords, room) == PlayerState::MOVE) {
+          old_coords.y = coords.y;
+          coords.y -= move_dist;
+      }
       break;
     case MovementDir::LEFT:
-      old_coords.x = coords.x;
-      coords.x -= move_dist;
+      if (CheckTilesLeft(move_dist, coords, room) == PlayerState::MOVE) {
+          old_coords.x = coords.x;
+          coords.x -= move_dist;
+      }
       break;
     case MovementDir::RIGHT:
-      old_coords.x = coords.x;
-      coords.x += move_dist;
+      if (CheckTilesRight(move_dist, coords, room) == PlayerState::MOVE) {
+          old_coords.x = coords.x;
+          coords.x += move_dist;
+      }
       break;
     default:
       break;

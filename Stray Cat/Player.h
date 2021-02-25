@@ -20,13 +20,20 @@ enum class MovementDir
   RIGHT
 };
 
+enum class PlayerState
+{
+    STAY,
+    MOVE,
+    DIE
+};
+
 struct Player
 {
   explicit Player(Point pos = {.x = 10, .y = 10}) :
                  coords(pos), old_coords(coords) {};
 
   bool Moved() const;
-  void ProcessInput(MovementDir dir);
+  void ProcessInput(MovementDir dir, std::string &room);
   void Draw(Image &screen);
 
 private:
