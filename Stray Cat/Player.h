@@ -41,8 +41,11 @@ struct Player
   void ProcessInput(MovementDir dir, std::string &room, Image &currentBackground, Image &screen);
   void Draw(Image &screen, Image &currentBackground);
   
-  bool GetActive() { return active;}
+  bool GetActive() { return active; }
+  void SetActive(bool a) { active = a; }
   void SetCoords(int x, int y) { coords.x = x; coords.y = y; }
+  void DrawCarrots(Image &screen);
+  void DrawLives(Image &screen);
 
 private:
   Point coords {.x = 10, .y = 10};
@@ -50,6 +53,7 @@ private:
   Pixel color {.r = 255, .g = 255, .b = 0, .a = 255};
   int move_speed = 4;
   int carrots = 0;
+  int lives = 3;
   bool active = true;
 
 };

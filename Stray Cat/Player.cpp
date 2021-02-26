@@ -4,6 +4,23 @@
 
 Image player_img("../../Stray Cat/resources/player.png");
 
+Image score_carrot("../../Stray Cat/resources/score_carrot.png");
+
+Image zero("../../Stray Cat/resources/0.png");
+Image one("../../Stray Cat/resources/1.png");
+Image two("../../Stray Cat/resources/2.png");
+Image three("../../Stray Cat/resources/3.png");
+Image four("../../Stray Cat/resources/4.png");
+Image five("../../Stray Cat/resources/5.png");
+Image six("../../Stray Cat/resources/6.png");
+Image seven("../../Stray Cat/resources/7.png");
+Image eight("../../Stray Cat/resources/8.png");
+Image nine("../../Stray Cat/resources/9.png");
+Image slash("../../Stray Cat/resources/slash.png");
+
+Image full_heart("../../Stray Cat/resources/full_heart.png");
+Image heart("../../Stray Cat/resources/heart.png");
+
 bool Player::Moved() const
 {
   if(coords.x == old_coords.x && coords.y == old_coords.y)
@@ -292,7 +309,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                     screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
                 }
             }
-            carrots++;;
+            carrots++;
             break;
         case 'X':
             return PlayerAction::PORTAL;
@@ -343,6 +360,10 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
 void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBackground, Image &screen)
 {
   int move_dist = move_speed * 1;
+    
+  if (!active) {
+    return;
+  }
     
   PlayerAction action;
     
@@ -407,20 +428,152 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
   switch (action) {
       case PlayerAction::CARROT1:
           carrots += 1;
+          DrawCarrots(screen);
           break;
       case PlayerAction::CARROT2:
           carrots += 2;
+          DrawCarrots(screen);
           break;
       case PlayerAction::CARROT3:
           carrots += 3;
+          DrawCarrots(screen);
           break;
       case PlayerAction::DIE:
+          lives -= 1;
+          DrawLives(screen);
           active = false;
-          throw('F');
+          if (lives > 0) {
+              throw ('S');
+          } else {
+              throw('F');
+          }
           break;
       default:
           break;
   }
+}
+
+void DrawDigit(Image &screen, Image &digit, int screen_x, int screen_y) {
+    for (int i = 0; i < tileSize; i++) {
+        for (int j = 0; j < tileSize; j++) {
+            screen.PutPixel(screen_x + i, screen_y + j,
+                            Blend(screen.GetPixel(screen_x + i, screen_y + j), digit.GetPixel(i, tileSize - j - 1)));
+        }
+    }
+}
+
+void SwitchDigit(Image &screen, int digit, int screen_x, int screen_y) {
+    switch (digit) {
+        case 0:
+            DrawDigit(screen, zero, screen_x, screen_y);
+            break;
+        case 1:
+            DrawDigit(screen, one, screen_x, screen_y);
+            break;
+        case 2:
+            DrawDigit(screen, two, screen_x, screen_y);
+            break;
+        case 3:
+            DrawDigit(screen, three, screen_x, screen_y);
+            break;
+        case 4:
+            DrawDigit(screen, four, screen_x, screen_y);
+            break;
+        case 5:
+            DrawDigit(screen, five, screen_x, screen_y);
+            break;
+        case 6:
+            DrawDigit(screen, six, screen_x, screen_y);
+            break;
+        case 7:
+            DrawDigit(screen, seven, screen_x, screen_y);
+            break;
+        case 8:
+            DrawDigit(screen, eight, screen_x, screen_y);
+            break;
+        case 9:
+            DrawDigit(screen, nine, screen_x, screen_y);
+            break;
+        default:
+            break;
+    }
+}
+
+void Player::DrawCarrots(Image &screen) {
+    for (int i = 0; i < screen.Width() / 2; i++) {
+        for (int j = 0; j < tileSize; j++) {
+            screen.PutPixel(i, screen.Height() - j - 1, brown);
+        }
+    }
+    
+    int screen_x = 0;
+    int screen_y = screen.Height() - tileSize;
+    for (int i = 0; i < tileSize; i++) {
+        for (int j = 0; j < tileSize; j++) {
+            screen.PutPixel(screen_x + i, screen_y + j,
+                                  Blend(screen.GetPixel(screen_x + i, screen_y + j), score_carrot.GetPixel(i, tileSize - j - 1)));
+        }
+    }
+    
+    screen_x = tileSize;
+    
+    if (carrots / 100 != 0) {
+        DrawDigit(screen, one, screen_x, screen_y);
+        screen_x += tileSize;
+    }
+    
+    if ((carrots / 100 != 0) || (carrots / 10 != 0)) {
+        SwitchDigit(screen, carrots % 100 / 10, screen_x, screen_y);
+        screen_x += tileSize;
+    }
+    
+    SwitchDigit(screen, carrots % 10, screen_x, screen_y);
+    screen_x += tileSize;
+    
+    for (int i = 0; i < tileSize; i++) {
+        for (int j = 0; j < tileSize; j++) {
+            screen.PutPixel(screen_x + i, screen_y + j,
+                                  Blend(screen.GetPixel(screen_x + i, screen_y + j), slash.GetPixel(i, tileSize - j - 1)));
+        }
+    }
+    screen_x += tileSize;
+    
+    DrawDigit(screen, one, screen_x, screen_y);
+    screen_x += tileSize;
+    DrawDigit(screen, three, screen_x, screen_y);
+    screen_x += tileSize;
+    DrawDigit(screen, seven, screen_x, screen_y);
+}
+
+void Player::DrawLives(Image &screen) {
+    for (int i = screen.Width() / 2; i < screen.Width(); i++) {
+        for (int j = 0; j < tileSize; j++) {
+            screen.PutPixel(i, screen.Height() - j - 1, brown);
+        }
+    }
+    
+    int screen_x = screen.Width() - tileSize * 3;
+    int screen_y = screen.Height() - tileSize;
+    
+    for (int k = 1; k <= 3 - lives; k++) {
+        for (int i = 0; i < tileSize; i++) {
+            for (int j = 0; j < tileSize; j++) {
+                screen.PutPixel(screen_x + i, screen_y + j,
+                                      Blend(screen.GetPixel(screen_x + i, screen_y + j), heart.GetPixel(i, tileSize - j - 1)));
+            }
+        }
+        screen_x += tileSize;
+    }
+    
+    for (int k = 1; k <= lives; k++) {
+        for (int i = 0; i < tileSize; i++) {
+            for (int j = 0; j < tileSize; j++) {
+                screen.PutPixel(screen_x + i, screen_y + j,
+                                      Blend(screen.GetPixel(screen_x + i, screen_y + j), full_heart.GetPixel(i, tileSize - j - 1)));
+            }
+        }
+        screen_x += tileSize;
+    }
 }
 
 void Player::Draw(Image &screen, Image &currentBackground)

@@ -14,6 +14,7 @@ struct Pixel
 };
 
 constexpr Pixel backgroundColor{0, 0, 0, 0};
+constexpr Pixel brown {218, 165, 32, 1};
 
 struct Image
 {
@@ -26,7 +27,7 @@ struct Image
   int Height()   const { return height; }
   int Channels() const { return channels; }
   size_t Size()  const { return size; }
-  Pixel* Data()        { return  data; }
+  Pixel* Data()        { return data; }
 
   Pixel GetPixel(int x, int y) { return data[width * y + x];}
   void  PutPixel(int x, int y, const Pixel &pix) { data[width * y + x] = pix; }

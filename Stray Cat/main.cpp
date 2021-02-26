@@ -15,8 +15,6 @@
 #include <map>
 #include <fstream>
 
-constexpr Pixel brown {218, 165, 32, 1};
-
 constexpr GLsizei WINDOW_WIDTH = 1024, WINDOW_HEIGHT = 1088;
 
 struct InputState
@@ -342,24 +340,13 @@ int main(int argc, char** argv)
         }
     }
     
-    for (int i = 0; i < WINDOW_WIDTH; i++) {
-        for (int j = 0; j < tileSize; j++) {
-            screenBuffer.PutPixel(i, WINDOW_HEIGHT - j - 1, brown);
-        }
-    }
-    
-    Image score_carrot("../../Stray Cat/resources/score_carrot.png");
-    int screen_x = 0;
-    int screen_y = WINDOW_HEIGHT - tileSize;
-    for (int i = 0; i < tileSize; i++) {
-        for (int j = 0; j < tileSize; j++) {
-            screenBuffer.PutPixel(screen_x + i, screen_y + j,
-                                  Blend(screenBuffer.GetPixel(screen_x + i, screen_y + j), score_carrot.GetPixel(i, tileSize - j - 1)));
-        }
-    }
+    player.DrawCarrots(screenBuffer);
+    player.DrawLives(screenBuffer);
     
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  GL_CHECK_ERRORS;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); GL_CHECK_ERRORS;
+    
+    GLfloat timeToStart = 0;
     
         //game loop
     while (!glfwWindowShouldClose(window))
@@ -368,6 +355,10 @@ int main(int argc, char** argv)
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
         glfwPollEvents();
+        
+        if (!player.GetActive() && (currentFrame > timeToStart) && (timeToStart != 0)) {
+            player.SetActive(true);
+        }
         
         try {
             processPlayerMovement(player, rooms[currentRoomType], currentBackground, screenBuffer);
@@ -382,6 +373,7 @@ int main(int argc, char** argv)
                     w = gameOver.Width();
                     screen_x = (WINDOW_WIDTH - w) / 2;
                     screen_y = (WINDOW_HEIGHT - h) / 2;
+                    timeToStart = 0;
                     for (int i = 0; i < w; i++) {
                         for (int j = 0; j < h; j++) {
                             screenBuffer.PutPixel(screen_x + i, screen_y + j, gameOver.GetPixel(i, h - j - 1));
@@ -450,6 +442,9 @@ int main(int argc, char** argv)
                         }
                     }
                     player.SetCoords(WINDOW_WIDTH - tileSize * 2 - 1, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                    break;
+                case 'S':
+                    timeToStart = currentFrame + 1;
                     break;
                 default:
                     break;
