@@ -358,10 +358,12 @@ int main(int argc, char** argv)
         
         if (!player.GetActive() && (currentFrame > timeToStart) && (timeToStart != 0)) {
             player.SetActive(true);
+            timeToStart = 0;
         }
         
         try {
             processPlayerMovement(player, rooms[currentRoomType], currentBackground, screenBuffer);
+            player.Draw(screenBuffer, currentBackground);
         } catch (char c) {
             int h;
             int w;
@@ -376,7 +378,7 @@ int main(int argc, char** argv)
                     timeToStart = 0;
                     for (int i = 0; i < w; i++) {
                         for (int j = 0; j < h; j++) {
-                            screenBuffer.PutPixel(screen_x + i, screen_y + j, gameOver.GetPixel(i, h - j - 1));
+                            //screenBuffer.PutPixel(screen_x + i, screen_y + j, gameOver.GetPixel(i, h - j - 1));
                         }
                     }
                     break;
@@ -397,12 +399,16 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomType], currentBackground);
                     MakeBackground(rooms[currentRoomType], img);
                     AddUnstableElements(rooms[currentRoomType], img);
+                    player.DrawCarrots(img);
+                    player.DrawLives(img);
                     for (int i = 0; i < img.Width(); i++) {
                         for (int j = 0; j < img.Height(); j++) {
                             screenBuffer.PutPixel(i, j, img.GetPixel(i, j));
                         }
                     }
-                    player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, tileSize);
+                    player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, 0);
+                    player.SetGettingOutCount(32);
+                    player.SetCurrentImage(16);
                     break;
                 case 'D':
                     currentRoomNumber += 6;
@@ -410,12 +416,16 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomType], currentBackground);
                     MakeBackground(rooms[currentRoomType], img);
                     AddUnstableElements(rooms[currentRoomType], img);
+                    player.DrawCarrots(img);
+                    player.DrawLives(img);
                     for (int i = 0; i < img.Width(); i++) {
                         for (int j = 0; j < img.Height(); j++) {
                             screenBuffer.PutPixel(i, j, img.GetPixel(i, j));
                         }
                     }
-                    player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, WINDOW_HEIGHT - tileSize * 2 - playerHeight - 1);
+                    player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, WINDOW_HEIGHT - tileSize - playerHeight - 1);
+                    player.SetGettingOutCount(32);
+                    player.SetCurrentImage(24);
                     break;
                 case 'R':
                     currentRoomNumber += 1;
@@ -423,12 +433,16 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomType], currentBackground);
                     MakeBackground(rooms[currentRoomType], img);
                     AddUnstableElements(rooms[currentRoomType], img);
+                    player.DrawCarrots(img);
+                    player.DrawLives(img);
                     for (int i = 0; i < img.Width(); i++) {
                         for (int j = 0; j < img.Height(); j++) {
                             screenBuffer.PutPixel(i, j, img.GetPixel(i, j));
                         }
                     }
-                    player.SetCoords(tileSize, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                    player.SetCoords(0, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                    player.SetGettingOutCount(32);
+                    player.SetCurrentImage(8);
                     break;
                 case 'L':
                     currentRoomNumber -= 1;
@@ -436,12 +450,16 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomType], currentBackground);
                     MakeBackground(rooms[currentRoomType], img);
                     AddUnstableElements(rooms[currentRoomType], img);
+                    player.DrawCarrots(img);
+                    player.DrawLives(img);
                     for (int i = 0; i < img.Width(); i++) {
                         for (int j = 0; j < img.Height(); j++) {
                             screenBuffer.PutPixel(i, j, img.GetPixel(i, j));
                         }
                     }
-                    player.SetCoords(WINDOW_WIDTH - tileSize * 2 - 1, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                    player.SetCoords(WINDOW_WIDTH - tileSize - 1, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                    player.SetGettingOutCount(32);
+                    player.SetCurrentImage(0);
                     break;
                 case 'S':
                     timeToStart = currentFrame + 1;
@@ -450,7 +468,6 @@ int main(int argc, char** argv)
                     break;
             }
         }
-        player.Draw(screenBuffer, currentBackground);
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
         glDrawPixels (WINDOW_WIDTH, WINDOW_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, screenBuffer.Data()); GL_CHECK_ERRORS;

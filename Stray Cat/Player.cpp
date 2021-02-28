@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-Image player_img("../../Stray Cat/resources/player.png");
-
 Image score_carrot("../../Stray Cat/resources/score_carrot.png");
 
 Image zero("../../Stray Cat/resources/0.png");
@@ -20,6 +18,10 @@ Image slash("../../Stray Cat/resources/slash.png");
 
 Image full_heart("../../Stray Cat/resources/full_heart.png");
 Image heart("../../Stray Cat/resources/heart.png");
+
+Image Bobby_going("../../Stray Cat/resources/Bobby_going.png");
+Image Bobby_falling("../../Stray Cat/resources/Bobby_falling.png");
+Image Bobby_dying("../../Stray Cat/resources/Bobby_dying.png");
 
 bool Player::Moved() const
 {
@@ -53,7 +55,7 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
             carrots++;
             break;
         case 'X':
-            return PlayerAction::PORTAL;
+            return PlayerAction::PORTAL_UP;
             break;
         default:
             break;
@@ -77,7 +79,7 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
                 carrots++;
                 break;
             case 'X':
-                return PlayerAction::PORTAL;
+                return PlayerAction::PORTAL_UP;
                 break;
             default:
                 break;
@@ -122,7 +124,7 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
             carrots++;;
             break;
         case 'X':
-            return PlayerAction::PORTAL;
+            return PlayerAction::PORTAL_DOWN;
             break;
         case 'Q':
             return PlayerAction::WIN;
@@ -149,7 +151,7 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
                 carrots++;;
                 break;
             case 'X':
-                return PlayerAction::PORTAL;
+                return PlayerAction::PORTAL_DOWN;
                 break;
             case 'Q':
                 return PlayerAction::WIN;
@@ -197,7 +199,7 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             carrots++;;
             break;
         case 'X':
-            return PlayerAction::PORTAL;
+            return PlayerAction::PORTAL_LEFT;
             break;
         default:
             break;
@@ -220,7 +222,7 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             carrots++;;
             break;
         case 'X':
-            return PlayerAction::PORTAL;
+            return PlayerAction::PORTAL_LEFT;
             break;
         default:
             break;
@@ -244,7 +246,7 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                 carrots++;;
                 break;
             case 'X':
-                return PlayerAction::PORTAL;
+                return PlayerAction::PORTAL_LEFT;
                 break;
             default:
                 break;
@@ -289,7 +291,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             carrots++;;
             break;
         case 'X':
-            return PlayerAction::PORTAL;
+            return PlayerAction::PORTAL_RIGHT;
             break;
         default:
             break;
@@ -312,7 +314,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             carrots++;
             break;
         case 'X':
-            return PlayerAction::PORTAL;
+            return PlayerAction::PORTAL_RIGHT;
             break;
         default:
             break;
@@ -336,7 +338,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                 carrots++;;
                 break;
             case 'X':
-                return PlayerAction::PORTAL;
+                return PlayerAction::PORTAL_RIGHT;
                 break;
             default:
                 break;
@@ -373,11 +375,21 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesUp(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL)) {
+          (action == PlayerAction::PORTAL_UP)) {
           old_coords.y = coords.y;
           coords.y += move_dist;
-          if (action == PlayerAction::PORTAL) {
-              throw('U');
+          if (switch_image == 3) {
+              if (current_image / 8 == 2) {
+                  current_image = 16 + (current_image + 1) % 8;
+              } else {
+                  current_image = 16;
+              }
+          }
+          switch_image = (switch_image + 1) % 4;
+          if (action == PlayerAction::PORTAL_UP) {
+              active = false;
+              player_action = PlayerAction::PORTAL_UP;
+              falling_count = 32;
           }
       }
       break;
@@ -385,11 +397,21 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesDown(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL) || (action == PlayerAction::WIN)) {
+          (action == PlayerAction::PORTAL_DOWN) || (action == PlayerAction::WIN)) {
           old_coords.y = coords.y;
           coords.y -= move_dist;
-          if (action == PlayerAction::PORTAL) {
-              throw('D');
+          if (switch_image == 3) {
+              if (current_image / 8 == 3) {
+                  current_image = 24 + (current_image + 1) % 8;
+              } else {
+                  current_image = 24;
+              }
+          }
+          switch_image = (switch_image + 1) % 4;
+          if (action == PlayerAction::PORTAL_DOWN) {
+              active = false;
+              player_action = PlayerAction::PORTAL_DOWN;
+              falling_count = 32;
           }
           if (action == PlayerAction::WIN) {
               active = false;
@@ -401,11 +423,21 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesLeft(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL)) {
+          (action == PlayerAction::PORTAL_LEFT)) {
           old_coords.x = coords.x;
           coords.x -= move_dist;
-          if (action == PlayerAction::PORTAL) {
-              throw('L');
+          if (switch_image == 3) {
+              if (current_image / 8 == 0) {
+                  current_image = (current_image + 1) % 8;
+              } else {
+                  current_image = 0;
+              }
+          }
+          switch_image = (switch_image + 1) % 4;
+          if (action == PlayerAction::PORTAL_LEFT) {
+              active = false;
+              player_action = PlayerAction::PORTAL_LEFT;
+              falling_count = 32;
           }
       }
       break;
@@ -413,11 +445,21 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesRight(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL)) {
+          (action == PlayerAction::PORTAL_RIGHT)) {
           old_coords.x = coords.x;
           coords.x += move_dist;
-          if (action == PlayerAction::PORTAL) {
-              throw('R');
+          if (switch_image == 3) {
+              if (current_image / 8 == 1) {
+                  current_image = 8 + (current_image + 1) % 8;
+              } else {
+                  current_image = 8;
+              }
+          }
+          switch_image = (switch_image + 1) % 4;
+          if (action == PlayerAction::PORTAL_RIGHT) {
+              active = false;
+              player_action = PlayerAction::PORTAL_RIGHT;
+              falling_count = 32;
           }
       }
       break;
@@ -445,7 +487,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (lives > 0) {
               throw ('S');
           } else {
-              throw('F');
+              dying_count = 32;
           }
           break;
       default:
@@ -578,7 +620,7 @@ void Player::DrawLives(Image &screen) {
 
 void Player::Draw(Image &screen, Image &currentBackground)
 {
-  if(Moved() && active)
+  if(Moved() || (!active && ((falling_count > 0) || (getting_out_count > 0) || (dying_count > 0))))
   {
     for(int y = old_coords.y; y < old_coords.y + playerHeight; ++y)
     {
@@ -591,12 +633,109 @@ void Player::Draw(Image &screen, Image &currentBackground)
   }
 
   if (active) {
+      int image_x = (current_image % 8) * playerWidth;
+      int image_y = (current_image / 8) * (playerHeight + 1);
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
       {
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
         {
-          screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), player_img.GetPixel(x - coords.x, playerHeight - (y - coords.y) - 1)));
+          screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_going.GetPixel(image_x + x - coords.x,
+                                                                playerHeight + image_y - (y - coords.y))));
         }
+      }
+  } else if (falling_count > 0) {
+      int image_x = (7 - (falling_count / 4 % 8)) * playerWidth;
+      for(int y = coords.y; y < coords.y + playerHeight; ++y)
+      {
+        for(int x = coords.x; x < coords.x + playerWidth; ++x)
+        {
+          screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_falling.GetPixel(image_x + x - coords.x,
+                                                                playerHeight - (y - coords.y))));
+        }
+      }
+      falling_count -= 1;
+      if ((coords.x >= 2) && (coords.y >= 3) && (coords.x <= screen.Width() - 3) && (coords.y <= screen.Height() - tileSize - 4)) {
+          switch (player_action) {
+              case PlayerAction::PORTAL_UP:
+                  coords.y += 3;
+                  break;
+              case PlayerAction::PORTAL_DOWN:
+                  coords.y -= 2;
+                  break;
+              case PlayerAction::PORTAL_RIGHT:
+                  coords.x += 2;
+                  break;
+              case PlayerAction::PORTAL_LEFT:
+                  coords.x -= 2;
+                  break;
+              default:
+                  break;
+          }
+      }
+      if (falling_count == 0) {
+          switch (player_action) {
+              case PlayerAction::PORTAL_UP:
+                  throw ('U');
+                  break;
+              case PlayerAction::PORTAL_DOWN:
+                  throw ('D');
+                  break;
+              case PlayerAction::PORTAL_RIGHT:
+                  throw ('R');
+                  break;
+              case PlayerAction::PORTAL_LEFT:
+                  throw ('L');
+                  break;
+              default:
+                  break;
+          }
+      }
+  } else if (getting_out_count > 0) {
+      int image_x = (getting_out_count / 4 % 8) * playerWidth;
+      for(int y = coords.y; y < coords.y + playerHeight; ++y)
+      {
+        for(int x = coords.x; x < coords.x + playerWidth; ++x)
+        {
+          screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_falling.GetPixel(image_x + x - coords.x,
+                                                                playerHeight - (y - coords.y))));
+        }
+      }
+      getting_out_count -= 1;
+      switch (player_action) {
+          case PlayerAction::PORTAL_UP:
+              coords.y += 2;
+              break;
+          case PlayerAction::PORTAL_DOWN:
+              coords.y -= 2;
+              break;
+          case PlayerAction::PORTAL_RIGHT:
+              coords.x += 2;
+              break;
+          case PlayerAction::PORTAL_LEFT:
+              coords.x -= 2;
+              break;
+          default:
+              break;
+      }
+      if (getting_out_count == 0) {
+          active = true;
+          player_action = PlayerAction::MOVE;
+      }
+  } else if (dying_count > 0) {
+      std::cout << dying_count << std::endl;
+      int image_x = (7 - (dying_count / 4 % 8)) * playerWidth;
+      for(int y = coords.y; y < coords.y + playerHeight; ++y)
+      {
+        for(int x = coords.x; x < coords.x + playerWidth; ++x)
+        {
+          screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_dying.GetPixel(image_x + x - coords.x,
+                                                                playerHeight - (y - coords.y))));
+        }
+      }
+      dying_count -= 1;
+      std::cout << dying_count << std::endl;
+      if (dying_count == 0) {
+          throw('F');
       }
   }
 }
