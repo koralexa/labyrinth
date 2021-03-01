@@ -407,7 +407,7 @@ int main(int argc, char** argv)
                         }
                     }
                     player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, 0);
-                    player.SetGettingOutCount(32);
+                    player.SetGettingOutCount(36);
                     player.SetCurrentImage(16);
                     break;
                 case 'D':
@@ -424,7 +424,7 @@ int main(int argc, char** argv)
                         }
                     }
                     player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, WINDOW_HEIGHT - tileSize - playerHeight - 1);
-                    player.SetGettingOutCount(32);
+                    player.SetGettingOutCount(36);
                     player.SetCurrentImage(24);
                     break;
                 case 'R':
@@ -441,7 +441,7 @@ int main(int argc, char** argv)
                         }
                     }
                     player.SetCoords(0, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
-                    player.SetGettingOutCount(32);
+                    player.SetGettingOutCount(36);
                     player.SetCurrentImage(8);
                     break;
                 case 'L':
@@ -458,7 +458,7 @@ int main(int argc, char** argv)
                         }
                     }
                     player.SetCoords(WINDOW_WIDTH - tileSize - 1, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
-                    player.SetGettingOutCount(32);
+                    player.SetGettingOutCount(36);
                     player.SetCurrentImage(0);
                     break;
                 case 'S':

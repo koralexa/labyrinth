@@ -23,6 +23,8 @@ Image Bobby_going("../../Stray Cat/resources/Bobby_going.png");
 Image Bobby_falling("../../Stray Cat/resources/Bobby_falling.png");
 Image Bobby_dying("../../Stray Cat/resources/Bobby_dying.png");
 
+Image portals("../../Stray Cat/resources/portals.png");
+
 bool Player::Moved() const
 {
   if(coords.x == old_coords.x && coords.y == old_coords.y)
@@ -389,7 +391,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_UP) {
               active = false;
               player_action = PlayerAction::PORTAL_UP;
-              falling_count = 32;
+              falling_count = 36;
           }
       }
       break;
@@ -411,7 +413,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_DOWN) {
               active = false;
               player_action = PlayerAction::PORTAL_DOWN;
-              falling_count = 32;
+              falling_count = 36;
           }
           if (action == PlayerAction::WIN) {
               active = false;
@@ -437,7 +439,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_LEFT) {
               active = false;
               player_action = PlayerAction::PORTAL_LEFT;
-              falling_count = 32;
+              falling_count = 36;
           }
       }
       break;
@@ -459,7 +461,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_RIGHT) {
               active = false;
               player_action = PlayerAction::PORTAL_RIGHT;
-              falling_count = 32;
+              falling_count = 36;
           }
       }
       break;
@@ -644,7 +646,62 @@ void Player::Draw(Image &screen, Image &currentBackground)
         }
       }
   } else if (falling_count > 0) {
-      int image_x = (7 - (falling_count / 4 % 8)) * playerWidth;
+      int image_x;
+      int image_y;
+      if (falling_count > 20) {
+          image_x = ((36 - falling_count + 1) / 2) * (tileSize * 2 + 6);
+      } else if (falling_count > 6) {
+          image_x = (7 - ((22 - falling_count + 1) / 2)) * (tileSize * 2 + 6);
+      } else {
+          image_x = ((6 - falling_count + 1) / 2 + 1) * (tileSize * 2 + 6);
+      }
+      image_y = 0;
+      switch (player_action) {
+          case PlayerAction::PORTAL_UP:
+              for(int y = tileSize * 15; y < tileSize * 16; ++y)
+              {
+                for(int x = tileSize * 7; x < tileSize * 9; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
+                                                                                      tileSize * 2 - (y - tileSize * 15) - 1)));
+                }
+              }
+              break;
+          case PlayerAction::PORTAL_DOWN:
+              for(int y = 0; y < tileSize; ++y)
+              {
+                for(int x = tileSize * 7; x < tileSize * 9; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
+                                                                                      tileSize - y - 1)));
+                }
+              }
+              break;
+          case PlayerAction::PORTAL_RIGHT:
+              for(int y = tileSize * 7; y < tileSize * 9; ++y)
+              {
+                for(int x = tileSize * 15; x < tileSize * 16; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 15,
+                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                }
+              }
+              break;
+          case PlayerAction::PORTAL_LEFT:
+              image_x += tileSize;
+              for(int y = tileSize * 7; y < tileSize * 9; ++y)
+              {
+                for(int x = 0; x < tileSize; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x,
+                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                }
+              }
+              break;
+          default:
+              break;
+      }
+      image_x = (8 - (falling_count / 4 % 9)) * playerWidth;
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
       {
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
@@ -654,7 +711,10 @@ void Player::Draw(Image &screen, Image &currentBackground)
         }
       }
       falling_count -= 1;
-      if ((coords.x >= 2) && (coords.y >= 3) && (coords.x <= screen.Width() - 3) && (coords.y <= screen.Height() - tileSize - 4)) {
+      if ((coords.x >= 2) &&
+          (coords.y >= 3) &&
+          (coords.x <= screen.Width() - playerWidth - 3) &&
+          (coords.y <= screen.Height() - tileSize - 4)) {
           switch (player_action) {
               case PlayerAction::PORTAL_UP:
                   coords.y += 3;
@@ -691,7 +751,62 @@ void Player::Draw(Image &screen, Image &currentBackground)
           }
       }
   } else if (getting_out_count > 0) {
-      int image_x = (getting_out_count / 4 % 8) * playerWidth;
+      int image_x;
+      int image_y;
+      if (getting_out_count > 28) {
+          image_x = ((getting_out_count - 30 + 1) / 2) * (tileSize * 2 + 6);
+      } else if (getting_out_count > 14) {
+          image_x = ((30 - getting_out_count + 1) / 2) * (tileSize * 2 + 6);
+      } else {
+          image_x = ((getting_out_count + 1) / 2 - 1) * (tileSize * 2 + 6);
+      }
+      image_y = 0;
+      switch (player_action) {
+          case PlayerAction::PORTAL_UP:
+              for(int y = 0; y < tileSize; ++y)
+              {
+                for(int x = tileSize * 7; x < tileSize * 9; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
+                                                                                      tileSize - y - 1)));
+                }
+              }
+              break;
+          case PlayerAction::PORTAL_DOWN:
+              for(int y = tileSize * 15; y < tileSize * 16; ++y)
+              {
+                for(int x = tileSize * 7; x < tileSize * 9; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
+                                                                                      tileSize * 2 - (y - tileSize * 15) - 1)));
+                }
+              }
+              break;
+          case PlayerAction::PORTAL_RIGHT:
+              image_x += tileSize;
+              for(int y = tileSize * 7; y < tileSize * 9; ++y)
+              {
+                for(int x = 0; x < tileSize; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x,
+                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                }
+              }
+              break;
+          case PlayerAction::PORTAL_LEFT:
+              for(int y = tileSize * 7; y < tileSize * 9; ++y)
+              {
+                for(int x = tileSize * 15; x < tileSize * 16; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 15,
+                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                }
+              }
+              break;
+          default:
+              break;
+      }
+      image_x = (getting_out_count / 4 % 9) * playerWidth;
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
       {
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
