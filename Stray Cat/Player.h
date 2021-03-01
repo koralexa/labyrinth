@@ -53,6 +53,7 @@ struct Player
   void SetCoords(int x, int y) { coords.x = x; coords.y = y; }
   void SetGettingOutCount(int g) { getting_out_count = g; }
   void SetCurrentImage(int i) { current_image = i; }
+  enum PlayerAction GetPlayerAction() { return player_action; }
   void DrawCarrots(Image &screen);
   void DrawLives(Image &screen);
 

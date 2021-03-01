@@ -49,9 +49,10 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
             break;
         case 'G':
             room[tile_y * 16 + tile_x] = '.';
-            for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
-                    screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+            for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
+                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                    screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                    currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
             carrots++;
@@ -73,9 +74,10 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
                 break;
             case 'G':
                 room[tile_y * 16 + tile_x + 1] = '.';
-                for (int x = (tile_x + 1) * tileSize; x < (tile_x + 1) * tileSize + tileSize; x++) {
-                    for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
-                        screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+                for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
+                    for (int x = (tile_x + 1) * tileSize; x < (tile_x + 1) * tileSize + tileSize; x++) {
+                        screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                        currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
                 carrots++;
@@ -118,9 +120,10 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
             break;
         case 'G':
             room[tile_y * 16 + tile_x] = '.';
-            for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
-                    screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+            for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
+                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                    screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                    currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
             carrots++;;
@@ -145,9 +148,10 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
                 break;
             case 'G':
                 room[tile_y * 16 + tile_x + 1] = '.';
-                for (int x = (tile_x + 1) * tileSize; x < (tile_x + 1) * tileSize + tileSize; x++) {
-                    for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
-                        screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+                for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
+                    for (int x = (tile_x + 1) * tileSize; x < (tile_x + 1) * tileSize + tileSize; x++) {
+                        screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                        currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
                 carrots++;;
@@ -193,9 +197,10 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             break;
         case 'G':
             room[tile_y * 16 + tile_x] = '.';
-            for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
-                    screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+            for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
+                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                    screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                    currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
             carrots++;;
@@ -216,9 +221,10 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             break;
         case 'G':
             room[(tile_y - 1) * 16 + tile_x] = '.';
-            for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                for (int y = (tile_y - 1) * tileSize; y < (tile_y - 1) * tileSize + tileSize; y++) {
-                    screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+            for (int y = (tile_y - 1) * tileSize; y < (tile_y - 1) * tileSize + tileSize; y++) {
+                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                    screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                    currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
             carrots++;;
@@ -240,9 +246,10 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                 break;
             case 'G':
                 room[(tile_y - 2) * 16 + tile_x] = '.';
-                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                    for (int y = (tile_y - 2) * tileSize; y < (tile_y - 2) * tileSize + tileSize; y++) {
-                        screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+                for (int y = (tile_y - 2) * tileSize; y < (tile_y - 2) * tileSize + tileSize; y++) {
+                    for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                        screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                        currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
                 carrots++;;
@@ -285,9 +292,10 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             break;
         case 'G':
             room[tile_y * 16 + tile_x] = '.';
-            for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
-                    screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+            for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
+                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                    screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                    currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
             carrots++;;
@@ -308,9 +316,10 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             break;
         case 'G':
             room[(tile_y - 1) * 16 + tile_x] = '.';
-            for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                for (int y = (tile_y - 1) * tileSize; y < (tile_y - 1) * tileSize + tileSize; y++) {
-                    screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+            for (int y = (tile_y - 1) * tileSize; y < (tile_y - 1) * tileSize + tileSize; y++) {
+                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                    screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                    currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
             carrots++;
@@ -332,9 +341,10 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                 break;
             case 'G':
                 room[(tile_y - 2) * 16 + tile_x] = '.';
-                for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
-                    for (int y = (tile_y - 2) * tileSize; y < (tile_y - 2) * tileSize + tileSize; y++) {
-                        screen.PutPixel(x, screen.Height() - tileSize - y - 1, currentBackground.GetPixel(x, currentBackground.Height() - y - 1));
+                for (int y = (tile_y - 2) * tileSize; y < (tile_y - 2) * tileSize + tileSize; y++) {
+                    for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
+                        screen.PutPixel(x, screen.Height() - tileSize - y - 1,
+                                        currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
                 carrots++;;
@@ -417,6 +427,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           }
           if (action == PlayerAction::WIN) {
               active = false;
+              player_action = PlayerAction::WIN;
               throw('W');
           }
       }
@@ -498,8 +509,8 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
 }
 
 void DrawDigit(Image &screen, Image &digit, int screen_x, int screen_y) {
-    for (int i = 0; i < tileSize; i++) {
-        for (int j = 0; j < tileSize; j++) {
+    for (int j = 0; j < tileSize; j++) {
+        for (int i = 0; i < tileSize; i++) {
             screen.PutPixel(screen_x + i, screen_y + j,
                             Blend(screen.GetPixel(screen_x + i, screen_y + j), digit.GetPixel(i, tileSize - j - 1)));
         }
@@ -544,16 +555,16 @@ void SwitchDigit(Image &screen, int digit, int screen_x, int screen_y) {
 }
 
 void Player::DrawCarrots(Image &screen) {
-    for (int i = 0; i < screen.Width() / 2; i++) {
-        for (int j = 0; j < tileSize; j++) {
+    for (int j = 0; j < tileSize; j++) {
+        for (int i = 0; i < screen.Width() / 2; i++) {
             screen.PutPixel(i, screen.Height() - j - 1, brown);
         }
     }
     
     int screen_x = 0;
     int screen_y = screen.Height() - tileSize;
-    for (int i = 0; i < tileSize; i++) {
-        for (int j = 0; j < tileSize; j++) {
+    for (int j = 0; j < tileSize; j++) {
+        for (int i = 0; i < tileSize; i++) {
             screen.PutPixel(screen_x + i, screen_y + j,
                                   Blend(screen.GetPixel(screen_x + i, screen_y + j), score_carrot.GetPixel(i, tileSize - j - 1)));
         }
@@ -574,8 +585,8 @@ void Player::DrawCarrots(Image &screen) {
     SwitchDigit(screen, carrots % 10, screen_x, screen_y);
     screen_x += tileSize;
     
-    for (int i = 0; i < tileSize; i++) {
-        for (int j = 0; j < tileSize; j++) {
+    for (int j = 0; j < tileSize; j++) {
+        for (int i = 0; i < tileSize; i++) {
             screen.PutPixel(screen_x + i, screen_y + j,
                                   Blend(screen.GetPixel(screen_x + i, screen_y + j), slash.GetPixel(i, tileSize - j - 1)));
         }
@@ -590,8 +601,8 @@ void Player::DrawCarrots(Image &screen) {
 }
 
 void Player::DrawLives(Image &screen) {
-    for (int i = screen.Width() / 2; i < screen.Width(); i++) {
-        for (int j = 0; j < tileSize; j++) {
+    for (int j = 0; j < tileSize; j++) {
+        for (int i = screen.Width() / 2; i < screen.Width(); i++) {
             screen.PutPixel(i, screen.Height() - j - 1, brown);
         }
     }
@@ -600,8 +611,8 @@ void Player::DrawLives(Image &screen) {
     int screen_y = screen.Height() - tileSize;
     
     for (int k = 1; k <= 3 - lives; k++) {
-        for (int i = 0; i < tileSize; i++) {
-            for (int j = 0; j < tileSize; j++) {
+        for (int j = 0; j < tileSize; j++) {
+            for (int i = 0; i < tileSize; i++) {
                 screen.PutPixel(screen_x + i, screen_y + j,
                                       Blend(screen.GetPixel(screen_x + i, screen_y + j), heart.GetPixel(i, tileSize - j - 1)));
             }
@@ -610,8 +621,8 @@ void Player::DrawLives(Image &screen) {
     }
     
     for (int k = 1; k <= lives; k++) {
-        for (int i = 0; i < tileSize; i++) {
-            for (int j = 0; j < tileSize; j++) {
+        for (int j = 0; j < tileSize; j++) {
+            for (int i = 0; i < tileSize; i++) {
                 screen.PutPixel(screen_x + i, screen_y + j,
                                       Blend(screen.GetPixel(screen_x + i, screen_y + j), full_heart.GetPixel(i, tileSize - j - 1)));
             }
@@ -837,7 +848,6 @@ void Player::Draw(Image &screen, Image &currentBackground)
           player_action = PlayerAction::MOVE;
       }
   } else if (dying_count > 0) {
-      std::cout << dying_count << std::endl;
       int image_x = (7 - (dying_count / 4 % 8)) * playerWidth;
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
       {
@@ -848,8 +858,8 @@ void Player::Draw(Image &screen, Image &currentBackground)
         }
       }
       dying_count -= 1;
-      std::cout << dying_count << std::endl;
       if (dying_count == 0) {
+          player_action = PlayerAction::DIE;
           throw('F');
       }
   }
