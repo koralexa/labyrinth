@@ -595,9 +595,9 @@ void Player::DrawCarrots(Image &screen) {
     
     DrawDigit(screen, one, screen_x, screen_y);
     screen_x += tileSize;
-    DrawDigit(screen, three, screen_x, screen_y);
+    DrawDigit(screen, four, screen_x, screen_y);
     screen_x += tileSize;
-    DrawDigit(screen, seven, screen_x, screen_y);
+    DrawDigit(screen, eight, screen_x, screen_y);
 }
 
 void Player::DrawLives(Image &screen) {
