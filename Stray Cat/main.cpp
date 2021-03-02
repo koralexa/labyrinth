@@ -13,6 +13,7 @@
 #include <GLFW/glfw3.h>
 #include <string>
 #include <map>
+#include <vector>
 #include <fstream>
 
 constexpr GLsizei WINDOW_WIDTH = 1024, WINDOW_HEIGHT = 1088;
@@ -244,11 +245,12 @@ void MakeBackground(std::string &room, Image &screen) {
 
 void AddUnstableElements(std::string &room, Image &screen, Image &background, int image_no) {
     Image carrots("../../Stray Cat/resources/carrots.png");
+    Image hearts("../../Stray Cat/resources/hearts.png");
     
     int screen_x;
     int screen_y;
     
-    int carrots_x = image_no / 10 * tileSize;
+    int sprite_x = image_no / 10 * tileSize;
     
     for (int i = 0; i < room.size(); i++) {
         switch (room[i]) {
@@ -265,7 +267,24 @@ void AddUnstableElements(std::string &room, Image &screen, Image &background, in
                         screen_x = i % 16 * tileSize + x;
                         screen_y = (15 - i / 16) * tileSize + y;
                         screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y),
-                                                                  carrots.GetPixel(carrots_x + x, tileSize - y - 1)));
+                                                                  carrots.GetPixel(sprite_x + x, tileSize - y - 1)));
+                    }
+                }
+                break;
+              case 'H':
+                for (int y = 0; y < tileSize; y++) {
+                    for (int x = 0; x < tileSize; x++) {
+                        screen_x = i % 16 * tileSize + x;
+                        screen_y = (15 - i / 16) * tileSize + y;
+                        screen.PutPixel(screen_x, screen_y, background.GetPixel(screen_x, screen_y));
+                    }
+                }
+                for (int y = 0; y < tileSize; y++) {
+                    for (int x = 0; x < tileSize; x++) {
+                        screen_x = i % 16 * tileSize + x;
+                        screen_y = (15 - i / 16) * tileSize + y;
+                        screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y),
+                                                                  hearts.GetPixel(sprite_x + x, tileSize - y - 1)));
                     }
                 }
                 break;
@@ -335,34 +354,71 @@ int main(int argc, char** argv)
     
     std::string plan = ReadFileToString("../../Stray Cat/rooms/plan.txt");
     
-    std::map<char, std::string> rooms;
-    rooms['A'] = ReadFileToString("../../Stray Cat/rooms/A.txt");
-    rooms['B'] = ReadFileToString("../../Stray Cat/rooms/B.txt");
-    rooms['C'] = ReadFileToString("../../Stray Cat/rooms/C.txt");
-    rooms['D'] = ReadFileToString("../../Stray Cat/rooms/D.txt");
-    rooms['E'] = ReadFileToString("../../Stray Cat/rooms/E.txt");
-    rooms['F'] = ReadFileToString("../../Stray Cat/rooms/F.txt");
-    rooms['G'] = ReadFileToString("../../Stray Cat/rooms/G.txt");
-    rooms['H'] = ReadFileToString("../../Stray Cat/rooms/H.txt");
-    rooms['I'] = ReadFileToString("../../Stray Cat/rooms/I.txt");
-    rooms['J'] = ReadFileToString("../../Stray Cat/rooms/J.txt");
-    rooms['K'] = ReadFileToString("../../Stray Cat/rooms/K.txt");
-    rooms['L'] = ReadFileToString("../../Stray Cat/rooms/L.txt");
-    rooms['M'] = ReadFileToString("../../Stray Cat/rooms/M.txt");
-    rooms['N'] = ReadFileToString("../../Stray Cat/rooms/N.txt");
-    rooms['W'] = ReadFileToString("../../Stray Cat/rooms/W.txt");
+    std::vector<std::string> rooms;
+    
+    for (int i = 0; i < 36; i++) {
+        switch (plan[i]) {
+            case 'A':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/A.txt"));
+                break;
+            case 'B':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/B.txt"));
+                break;
+            case 'C':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/C.txt"));
+                break;
+            case 'D':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/D.txt"));
+                break;
+            case 'E':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/E.txt"));
+                break;
+            case 'F':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/F.txt"));
+                break;
+            case 'G':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/G.txt"));
+                break;
+            case 'H':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/H.txt"));
+                break;
+            case 'I':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/I.txt"));
+                break;
+            case 'J':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/J.txt"));
+                break;
+            case 'K':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/K.txt"));
+                break;
+            case 'L':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/L.txt"));
+                break;
+            case 'M':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/M.txt"));
+                break;
+            case 'N':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/N.txt"));
+                break;
+            case 'W':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/W.txt"));
+                break;
+            default:
+                rooms.push_back("");
+                break;
+        }
+    }
     
     Image gameOver("../../Stray Cat/resources/game_over.png");
     Image youWin("../../Stray Cat/resources/you_win.png");
     
-    char currentRoomType = 'A';
-    int currentRoomNumber = 0;
+    int currentRoomNumber = 33;
     Image currentBackground("../../Stray Cat/resources/grass-background.png");
-    MakeBackground(rooms[currentRoomType], currentBackground);
+    MakeBackground(rooms[currentRoomNumber], currentBackground);
     
     Image img("../../Stray Cat/resources/grass-background.png");
-    MakeBackground(rooms[currentRoomType], img);
-    AddUnstableElements(rooms[currentRoomType], img, currentBackground, 0);
+    MakeBackground(rooms[currentRoomNumber], img);
+    AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 0);
     
     for (int j = 0; j < img.Height(); j++) {
         for (int i = 0; i < img.Width(); i++) {
@@ -395,7 +451,7 @@ int main(int argc, char** argv)
         if ((player.GetPlayerAction() != PlayerAction::DIE) &&
             (player.GetPlayerAction() != PlayerAction::WIN) &&
             (switch_level_count == 0)) {
-            AddUnstableElements(rooms[currentRoomType], screenBuffer, currentBackground, frame_type);
+            AddUnstableElements(rooms[currentRoomNumber], screenBuffer, currentBackground, frame_type);
         }
         
         if (!player.GetActive() && (currentFrame > timeToStart) && (timeToStart != 0)) {
@@ -434,7 +490,7 @@ int main(int argc, char** argv)
         
         try {
             if (switch_level_count == 0) {
-                processPlayerMovement(player, rooms[currentRoomType], currentBackground, screenBuffer);
+                processPlayerMovement(player, rooms[currentRoomNumber], currentBackground, screenBuffer);
                 player.Draw(screenBuffer, currentBackground);
             }
         } catch (char c) {
@@ -460,10 +516,9 @@ int main(int argc, char** argv)
                     break;
                 case 'U':
                     currentRoomNumber -= 6;
-                    currentRoomType = plan[currentRoomNumber];
-                    MakeBackground(rooms[currentRoomType], currentBackground);
-                    MakeBackground(rooms[currentRoomType], img);
-                    AddUnstableElements(rooms[currentRoomType], img, currentBackground, 4);
+                    MakeBackground(rooms[currentRoomNumber], currentBackground);
+                    MakeBackground(rooms[currentRoomNumber], img);
+                    AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -473,10 +528,9 @@ int main(int argc, char** argv)
                     break;
                 case 'D':
                     currentRoomNumber += 6;
-                    currentRoomType = plan[currentRoomNumber];
-                    MakeBackground(rooms[currentRoomType], currentBackground);
-                    MakeBackground(rooms[currentRoomType], img);
-                    AddUnstableElements(rooms[currentRoomType], img, currentBackground, 4);
+                    MakeBackground(rooms[currentRoomNumber], currentBackground);
+                    MakeBackground(rooms[currentRoomNumber], img);
+                    AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -486,10 +540,9 @@ int main(int argc, char** argv)
                     break;
                 case 'R':
                     currentRoomNumber += 1;
-                    currentRoomType = plan[currentRoomNumber];
-                    MakeBackground(rooms[currentRoomType], currentBackground);
-                    MakeBackground(rooms[currentRoomType], img);
-                    AddUnstableElements(rooms[currentRoomType], img, currentBackground, 4);
+                    MakeBackground(rooms[currentRoomNumber], currentBackground);
+                    MakeBackground(rooms[currentRoomNumber], img);
+                    AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -499,10 +552,9 @@ int main(int argc, char** argv)
                     break;
                 case 'L':
                     currentRoomNumber -= 1;
-                    currentRoomType = plan[currentRoomNumber];
-                    MakeBackground(rooms[currentRoomType], currentBackground);
-                    MakeBackground(rooms[currentRoomType], img);
-                    AddUnstableElements(rooms[currentRoomType], img, currentBackground, 4);
+                    MakeBackground(rooms[currentRoomNumber], currentBackground);
+                    MakeBackground(rooms[currentRoomNumber], img);
+                    AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;

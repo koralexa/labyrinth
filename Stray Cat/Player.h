@@ -35,7 +35,8 @@ enum class PlayerAction
     PORTAL_DOWN,
     PORTAL_RIGHT,
     PORTAL_LEFT,
-    WIN
+    WIN,
+    HEART
 };
 
 struct Player

@@ -24,6 +24,7 @@ Image Bobby_falling("../../Stray Cat/resources/Bobby_falling.png");
 Image Bobby_dying("../../Stray Cat/resources/Bobby_dying.png");
 
 Image portals("../../Stray Cat/resources/portals.png");
+Image finish_portals("../../Stray Cat/resources/finish_portals.png");
 
 bool Player::Moved() const
 {
@@ -39,6 +40,8 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
     int tile_y = 15 - (new_coords.y + playerHeight) / tileSize; // new left up tile of player
     
     int carrots = 0;
+    int hearts = 0;
+    char tile;
     
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
@@ -48,6 +51,8 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
             return PlayerAction::DIE;
             break;
         case 'G':
+        case 'H':
+            tile = room[tile_y * 16 + tile_x];
             room[tile_y * 16 + tile_x] = '.';
             for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
                 for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -55,7 +60,11 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
                                     currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
-            carrots++;
+            if (tile == 'H') {
+                hearts++;
+            } else {
+                carrots++;
+            }
             break;
         case 'X':
             return PlayerAction::PORTAL_UP;
@@ -73,6 +82,8 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
                 return PlayerAction::DIE;
                 break;
             case 'G':
+            case 'H':
+                tile = room[tile_y * 16 + tile_x + 1];
                 room[tile_y * 16 + tile_x + 1] = '.';
                 for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
                     for (int x = (tile_x + 1) * tileSize; x < (tile_x + 1) * tileSize + tileSize; x++) {
@@ -80,7 +91,11 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
                                         currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
-                carrots++;
+                if (tile == 'H') {
+                    hearts++;
+                } else {
+                    carrots++;
+                }
                 break;
             case 'X':
                 return PlayerAction::PORTAL_UP;
@@ -101,6 +116,10 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
             break;
     }
     
+    if (hearts > 0) {
+        return PlayerAction::HEART;
+    }
+    
     return PlayerAction::MOVE;
 }
 
@@ -110,6 +129,8 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
     int tile_y = 15 - new_coords.y / tileSize; // new left down tile of player
     
     int carrots = 0;
+    int hearts = 0;
+    char tile;
     
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
@@ -119,6 +140,8 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
             return PlayerAction::DIE;
             break;
         case 'G':
+        case 'H':
+            tile = room[tile_y * 16 + tile_x];
             room[tile_y * 16 + tile_x] = '.';
             for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
                 for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -126,7 +149,11 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
                                     currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
-            carrots++;;
+            if (tile == 'H') {
+                hearts++;
+            } else {
+                carrots++;
+            }
             break;
         case 'X':
             return PlayerAction::PORTAL_DOWN;
@@ -147,6 +174,8 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
                 return PlayerAction::DIE;
                 break;
             case 'G':
+            case 'H':
+                tile = room[tile_y * 16 + tile_x + 1];
                 room[tile_y * 16 + tile_x + 1] = '.';
                 for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
                     for (int x = (tile_x + 1) * tileSize; x < (tile_x + 1) * tileSize + tileSize; x++) {
@@ -154,7 +183,11 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
                                         currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
-                carrots++;;
+                if (tile == 'H') {
+                    hearts++;
+                } else {
+                    carrots++;
+                }
                 break;
             case 'X':
                 return PlayerAction::PORTAL_DOWN;
@@ -177,6 +210,10 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
         default:
             break;
     }
+    
+    if (hearts > 0) {
+        return PlayerAction::HEART;
+    }
    
     return PlayerAction::MOVE;
 }
@@ -187,6 +224,8 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
     int tile_y = 15 - new_coords.y / tileSize; // new left down tile of player
     
     int carrots = 0;
+    int hearts = 0;
+    char tile;
     
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
@@ -196,6 +235,8 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             return PlayerAction::DIE;
             break;
         case 'G':
+        case 'H':
+            tile = room[tile_y * 16 + tile_x];
             room[tile_y * 16 + tile_x] = '.';
             for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
                 for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -203,7 +244,11 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                                     currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
-            carrots++;;
+            if (tile == 'H') {
+                hearts++;
+            } else {
+                carrots++;
+            }
             break;
         case 'X':
             return PlayerAction::PORTAL_LEFT;
@@ -220,6 +265,8 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             return PlayerAction::DIE;
             break;
         case 'G':
+        case 'H':
+            tile = room[(tile_y - 1) * 16 + tile_x];
             room[(tile_y - 1) * 16 + tile_x] = '.';
             for (int y = (tile_y - 1) * tileSize; y < (tile_y - 1) * tileSize + tileSize; y++) {
                 for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -227,7 +274,11 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                                     currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
-            carrots++;;
+            if (tile == 'H') {
+                hearts++;
+            } else {
+                carrots++;
+            }
             break;
         case 'X':
             return PlayerAction::PORTAL_LEFT;
@@ -245,6 +296,8 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                 return PlayerAction::DIE;
                 break;
             case 'G':
+            case 'H':
+                tile = room[(tile_y - 2) * 16 + tile_x];
                 room[(tile_y - 2) * 16 + tile_x] = '.';
                 for (int y = (tile_y - 2) * tileSize; y < (tile_y - 2) * tileSize + tileSize; y++) {
                     for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -252,7 +305,11 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                                         currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
-                carrots++;;
+                if (tile == 'H') {
+                    hearts++;
+                } else {
+                    carrots++;
+                }
                 break;
             case 'X':
                 return PlayerAction::PORTAL_LEFT;
@@ -272,6 +329,10 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
         default:
             break;
     }
+    
+    if (hearts > 0) {
+        return PlayerAction::HEART;
+    }
 
     return PlayerAction::MOVE;
 }
@@ -282,6 +343,8 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
     int tile_y = 15 - new_coords.y / tileSize; // new right down tile of player
     
     int carrots = 0;
+    int hearts = 0;
+    char tile;
     
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
@@ -291,6 +354,8 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             return PlayerAction::DIE;
             break;
         case 'G':
+        case 'H':
+            tile = room[tile_y * 16 + tile_x];
             room[tile_y * 16 + tile_x] = '.';
             for (int y = tile_y * tileSize; y < tile_y * tileSize + tileSize; y++) {
                 for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -298,7 +363,11 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                                     currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
-            carrots++;;
+            if (tile == 'H') {
+                hearts++;
+            } else {
+                carrots++;
+            }
             break;
         case 'X':
             return PlayerAction::PORTAL_RIGHT;
@@ -315,6 +384,8 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             return PlayerAction::DIE;
             break;
         case 'G':
+        case 'H':
+            tile = room[(tile_y - 1) * 16 + tile_x];
             room[(tile_y - 1) * 16 + tile_x] = '.';
             for (int y = (tile_y - 1) * tileSize; y < (tile_y - 1) * tileSize + tileSize; y++) {
                 for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -322,7 +393,11 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                                     currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                 }
             }
-            carrots++;
+            if (tile == 'H') {
+                hearts++;
+            } else {
+                carrots++;
+            }
             break;
         case 'X':
             return PlayerAction::PORTAL_RIGHT;
@@ -340,6 +415,8 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                 return PlayerAction::DIE;
                 break;
             case 'G':
+            case 'H':
+                tile = room[(tile_y - 2) * 16 + tile_x];
                 room[(tile_y - 2) * 16 + tile_x] = '.';
                 for (int y = (tile_y - 2) * tileSize; y < (tile_y - 2) * tileSize + tileSize; y++) {
                     for (int x = tile_x * tileSize; x < tile_x * tileSize + tileSize; x++) {
@@ -347,7 +424,11 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                                         currentBackground.GetPixel(x, currentBackground.Height() - tileSize - y - 1));
                     }
                 }
-                carrots++;;
+                if (tile == 'H') {
+                    hearts++;
+                } else {
+                    carrots++;
+                }
                 break;
             case 'X':
                 return PlayerAction::PORTAL_RIGHT;
@@ -366,6 +447,10 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             return PlayerAction::CARROT3;
         default:
             break;
+    }
+    
+    if (hearts > 0) {
+        return PlayerAction::HEART;
     }
     
     return PlayerAction::MOVE;
@@ -387,7 +472,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesUp(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL_UP)) {
+          (action == PlayerAction::PORTAL_UP) || (action == PlayerAction::HEART)) {
           old_coords.y = coords.y;
           coords.y += move_dist;
           if (switch_image == 3) {
@@ -409,7 +494,8 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesDown(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL_DOWN) || (action == PlayerAction::WIN)) {
+          (action == PlayerAction::PORTAL_DOWN) || (action == PlayerAction::WIN)  ||
+          (action == PlayerAction::HEART)) {
           old_coords.y = coords.y;
           coords.y -= move_dist;
           if (switch_image == 3) {
@@ -428,7 +514,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::WIN) {
               active = false;
               player_action = PlayerAction::WIN;
-              throw('W');
+              falling_count = 36;
           }
       }
       break;
@@ -436,7 +522,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesLeft(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL_LEFT)) {
+          (action == PlayerAction::PORTAL_LEFT) || (action == PlayerAction::HEART)) {
           old_coords.x = coords.x;
           coords.x -= move_dist;
           if (switch_image == 3) {
@@ -458,7 +544,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       action = CheckTilesRight(move_dist, coords, room, currentBackground, screen);
       if ((action == PlayerAction::MOVE) || (action == PlayerAction::CARROT1) ||
           (action == PlayerAction::CARROT2) || (action == PlayerAction::CARROT3) ||
-          (action == PlayerAction::PORTAL_RIGHT)) {
+          (action == PlayerAction::PORTAL_RIGHT)  || (action == PlayerAction::HEART)) {
           old_coords.x = coords.x;
           coords.x += move_dist;
           if (switch_image == 3) {
@@ -492,6 +578,10 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
       case PlayerAction::CARROT3:
           carrots += 3;
           DrawCarrots(screen);
+          break;
+      case PlayerAction::HEART:
+          lives += 1;
+          DrawLives(screen);
           break;
       case PlayerAction::DIE:
           lives -= 1;
@@ -597,7 +687,7 @@ void Player::DrawCarrots(Image &screen) {
     screen_x += tileSize;
     DrawDigit(screen, four, screen_x, screen_y);
     screen_x += tileSize;
-    DrawDigit(screen, eight, screen_x, screen_y);
+    DrawDigit(screen, five, screen_x, screen_y);
 }
 
 void Player::DrawLives(Image &screen) {
@@ -607,10 +697,10 @@ void Player::DrawLives(Image &screen) {
         }
     }
     
-    int screen_x = screen.Width() - tileSize * 3;
+    int screen_x = screen.Width() - tileSize * 8;
     int screen_y = screen.Height() - tileSize;
     
-    for (int k = 1; k <= 3 - lives; k++) {
+    for (int k = 1; k <= 8 - lives; k++) {
         for (int j = 0; j < tileSize; j++) {
             for (int i = 0; i < tileSize; i++) {
                 screen.PutPixel(screen_x + i, screen_y + j,
@@ -709,6 +799,16 @@ void Player::Draw(Image &screen, Image &currentBackground)
                 }
               }
               break;
+          case PlayerAction::WIN:
+              for(int y = 0; y < tileSize; ++y)
+              {
+                for(int x = tileSize * 7; x < tileSize * 9; ++x)
+                {
+                  screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), finish_portals.GetPixel(image_x + x - tileSize * 7,
+                                                                                             tileSize - y - 1)));
+                }
+              }
+              break;
           default:
               break;
       }
@@ -731,6 +831,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
                   coords.y += 3;
                   break;
               case PlayerAction::PORTAL_DOWN:
+              case PlayerAction::WIN:
                   coords.y -= 2;
                   break;
               case PlayerAction::PORTAL_RIGHT:
@@ -756,6 +857,9 @@ void Player::Draw(Image &screen, Image &currentBackground)
                   break;
               case PlayerAction::PORTAL_LEFT:
                   throw ('L');
+                  break;
+              case PlayerAction::WIN:
+                  throw ('W');
                   break;
               default:
                   break;
