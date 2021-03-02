@@ -412,7 +412,7 @@ int main(int argc, char** argv)
     Image gameOver("../../Stray Cat/resources/game_over.png");
     Image youWin("../../Stray Cat/resources/you_win.png");
     
-    int currentRoomNumber = 33;
+    int currentRoomNumber = 0;
     Image currentBackground("../../Stray Cat/resources/grass-background.png");
     MakeBackground(rooms[currentRoomNumber], currentBackground);
     
@@ -480,18 +480,19 @@ int main(int argc, char** argv)
         }
         
         if (switch_level_count > 0) {
-            for (int j = 0; j < screenBuffer.Height() - tileSize; j++) {
+            for (int j = 0; j < screenBuffer.Height(); j++) {
                 for (int i = 0; i < screenBuffer.Width(); i++) {
                     screenBuffer.PutPixel(i, j, TransformPixel(screenBuffer.GetPixel(i, j), img.GetPixel(i, j), switch_level_count));
                 }
             }
-            switch_level_count -= 1;
         }
         
         try {
             if (switch_level_count == 0) {
                 processPlayerMovement(player, rooms[currentRoomNumber], currentBackground, screenBuffer);
                 player.Draw(screenBuffer, currentBackground);
+            } else {
+                switch_level_count -= 1;
             }
         } catch (char c) {
             int h;

@@ -43,6 +43,8 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
     int hearts = 0;
     char tile;
     
+    PlayerAction tmp_action = PlayerAction::MOVE;
+    
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
             return PlayerAction::STAY;
@@ -67,7 +69,7 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
             }
             break;
         case 'X':
-            return PlayerAction::PORTAL_UP;
+            tmp_action = PlayerAction::PORTAL_UP;
             break;
         default:
             break;
@@ -98,11 +100,15 @@ PlayerAction CheckTilesUp(int move_dist, Point old_coords, std::string &room, Im
                 }
                 break;
             case 'X':
-                return PlayerAction::PORTAL_UP;
+                tmp_action = PlayerAction::PORTAL_UP;
                 break;
             default:
                 break;
         }
+    }
+    
+    if (tmp_action == PlayerAction::PORTAL_UP) {
+        return tmp_action;
     }
     
     switch (carrots) {
@@ -132,6 +138,8 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
     int hearts = 0;
     char tile;
     
+    PlayerAction tmp_action = PlayerAction::MOVE;
+    
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
             return PlayerAction::STAY;
@@ -156,7 +164,7 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
             }
             break;
         case 'X':
-            return PlayerAction::PORTAL_DOWN;
+            tmp_action = PlayerAction::PORTAL_DOWN;
             break;
         case 'Q':
             return PlayerAction::WIN;
@@ -190,7 +198,7 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
                 }
                 break;
             case 'X':
-                return PlayerAction::PORTAL_DOWN;
+                tmp_action = PlayerAction::PORTAL_DOWN;
                 break;
             case 'Q':
                 return PlayerAction::WIN;
@@ -198,6 +206,10 @@ PlayerAction CheckTilesDown(int move_dist, Point old_coords, std::string &room, 
             default:
                 break;
         }
+    }
+    
+    if (tmp_action == PlayerAction::PORTAL_DOWN) {
+        return tmp_action;
     }
     
     switch (carrots) {
@@ -227,6 +239,8 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
     int hearts = 0;
     char tile;
     
+    PlayerAction tmp_action = PlayerAction::MOVE;
+    
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
             return PlayerAction::STAY;
@@ -251,7 +265,7 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             }
             break;
         case 'X':
-            return PlayerAction::PORTAL_LEFT;
+            tmp_action = PlayerAction::PORTAL_LEFT;
             break;
         default:
             break;
@@ -281,7 +295,7 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
             }
             break;
         case 'X':
-            return PlayerAction::PORTAL_LEFT;
+            tmp_action = PlayerAction::PORTAL_LEFT;
             break;
         default:
             break;
@@ -312,11 +326,15 @@ PlayerAction CheckTilesLeft(int move_dist, Point old_coords, std::string &room, 
                 }
                 break;
             case 'X':
-                return PlayerAction::PORTAL_LEFT;
+                tmp_action = PlayerAction::PORTAL_LEFT;
                 break;
             default:
                 break;
         }
+    }
+    
+    if (tmp_action == PlayerAction::PORTAL_LEFT) {
+        return tmp_action;
     }
     
     switch (carrots) {
@@ -346,6 +364,8 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
     int hearts = 0;
     char tile;
     
+    PlayerAction tmp_action = PlayerAction::MOVE;
+    
     switch (room[tile_y * 16 + tile_x]) {
         case '#':
             return PlayerAction::STAY;
@@ -370,7 +390,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             }
             break;
         case 'X':
-            return PlayerAction::PORTAL_RIGHT;
+            tmp_action = PlayerAction::PORTAL_RIGHT;
             break;
         default:
             break;
@@ -400,7 +420,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
             }
             break;
         case 'X':
-            return PlayerAction::PORTAL_RIGHT;
+            tmp_action = PlayerAction::PORTAL_RIGHT;
             break;
         default:
             break;
@@ -431,11 +451,15 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
                 }
                 break;
             case 'X':
-                return PlayerAction::PORTAL_RIGHT;
+                tmp_action = PlayerAction::PORTAL_RIGHT;
                 break;
             default:
                 break;
         }
+    }
+    
+    if (tmp_action == PlayerAction::PORTAL_RIGHT) {
+        return tmp_action;
     }
     
     switch (carrots) {
@@ -685,9 +709,9 @@ void Player::DrawCarrots(Image &screen) {
     
     DrawDigit(screen, one, screen_x, screen_y);
     screen_x += tileSize;
-    DrawDigit(screen, four, screen_x, screen_y);
+    DrawDigit(screen, seven, screen_x, screen_y);
     screen_x += tileSize;
-    DrawDigit(screen, five, screen_x, screen_y);
+    DrawDigit(screen, zero, screen_x, screen_y);
 }
 
 void Player::DrawLives(Image &screen) {
@@ -734,6 +758,8 @@ void Player::Draw(Image &screen, Image &currentBackground)
     }
     old_coords = coords;
   }
+  DrawLives(screen);
+  DrawCarrots(screen);
 
   if (active) {
       int image_x = (current_image % 8) * playerWidth;
@@ -812,7 +838,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
           default:
               break;
       }
-      image_x = (8 - (falling_count / 4 % 9)) * playerWidth;
+      image_x = (8 - ((falling_count - 1) / 4 % 9)) * playerWidth;
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
       {
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
@@ -921,7 +947,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
           default:
               break;
       }
-      image_x = (getting_out_count / 4 % 9) * playerWidth;
+      image_x = ((getting_out_count - 1) / 4 % 9) * playerWidth;
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
       {
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
