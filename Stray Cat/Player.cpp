@@ -1,6 +1,7 @@
 #include "Player.h"
 
 #include <iostream>
+#include <vector>
 
 Image score_carrot("../../Stray Cat/resources/score_carrot.png");
 
@@ -25,6 +26,12 @@ Image Bobby_dying("../../Stray Cat/resources/Bobby_dying.png");
 
 Image portals("../../Stray Cat/resources/portals.png");
 Image finish_portals("../../Stray Cat/resources/finish_portals.png");
+
+Image wolf_left("../../Stray Cat/resources/wolf_left.png");
+Image wolf_right("../../Stray Cat/resources/wolf_right.png");
+Image wolf_sleeping("../../Stray Cat/resources/wolf_sleeping.png");
+Image wolf_firing_left("../../Stray Cat/resources/wolf_firing_left.png");
+Image wolf_firing_right("../../Stray Cat/resources/wolf_firing_right.png");
 
 bool Player::Moved() const
 {
@@ -510,6 +517,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_UP) {
               active = false;
               player_action = PlayerAction::PORTAL_UP;
+              last_portal = PlayerAction::PORTAL_UP;
               falling_count = 36;
           }
       }
@@ -533,6 +541,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_DOWN) {
               active = false;
               player_action = PlayerAction::PORTAL_DOWN;
+              last_portal = PlayerAction::PORTAL_DOWN;
               falling_count = 36;
           }
           if (action == PlayerAction::WIN) {
@@ -560,6 +569,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_LEFT) {
               active = false;
               player_action = PlayerAction::PORTAL_LEFT;
+              last_portal = PlayerAction::PORTAL_LEFT;
               falling_count = 36;
           }
       }
@@ -582,6 +592,7 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           if (action == PlayerAction::PORTAL_RIGHT) {
               active = false;
               player_action = PlayerAction::PORTAL_RIGHT;
+              last_portal = PlayerAction::PORTAL_RIGHT;
               falling_count = 36;
           }
       }
@@ -745,9 +756,10 @@ void Player::DrawLives(Image &screen) {
     }
 }
 
-void Player::Draw(Image &screen, Image &currentBackground)
+void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wolves)
 {
-  if(Moved() || (!active && ((falling_count > 0) || (getting_out_count > 0) || (dying_count > 0))))
+  if(Moved() || (!active && (((falling_count > 0) && (player_action != PlayerAction::WOLF)) ||
+                             (getting_out_count > 0) || (dying_count > 0))))
   {
     for(int y = old_coords.y; y < old_coords.y + playerHeight; ++y)
     {
@@ -769,7 +781,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
         {
           screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_going.GetPixel(image_x + x - coords.x,
-                                                                playerHeight + image_y - (y - coords.y))));
+                                                                playerHeight + image_y - (y - coords.y) - 1)));
         }
       }
   } else if (falling_count > 0) {
@@ -844,7 +856,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
         {
           screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_falling.GetPixel(image_x + x - coords.x,
-                                                                playerHeight - (y - coords.y))));
+                                                                playerHeight - (y - coords.y) - 1)));
         }
       }
       falling_count -= 1;
@@ -887,6 +899,9 @@ void Player::Draw(Image &screen, Image &currentBackground)
               case PlayerAction::WIN:
                   throw ('W');
                   break;
+              case PlayerAction::WOLF:
+                  throw ('A');
+                  break;
               default:
                   break;
           }
@@ -902,7 +917,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
           image_x = ((getting_out_count + 1) / 2 - 1) * (tileSize * 2 + 6);
       }
       image_y = 0;
-      switch (player_action) {
+      switch (last_portal) {
           case PlayerAction::PORTAL_UP:
               for(int y = 0; y < tileSize; ++y)
               {
@@ -953,11 +968,11 @@ void Player::Draw(Image &screen, Image &currentBackground)
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
         {
           screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_falling.GetPixel(image_x + x - coords.x,
-                                                                playerHeight - (y - coords.y))));
+                                                                playerHeight - (y - coords.y) - 1)));
         }
       }
       getting_out_count -= 1;
-      switch (player_action) {
+      switch (last_portal) {
           case PlayerAction::PORTAL_UP:
               coords.y += 2;
               break;
@@ -984,7 +999,7 @@ void Player::Draw(Image &screen, Image &currentBackground)
         for(int x = coords.x; x < coords.x + playerWidth; ++x)
         {
           screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), Bobby_dying.GetPixel(image_x + x - coords.x,
-                                                                playerHeight - (y - coords.y))));
+                                                                playerHeight - (y - coords.y) - 1)));
         }
       }
       dying_count -= 1;
@@ -993,4 +1008,183 @@ void Player::Draw(Image &screen, Image &currentBackground)
           throw('F');
       }
   }
+}
+
+bool Wolf::Move(Player &player, std::string &room, Image &currentBackground, Image &screen) {
+    if (!active) {
+        return false;
+    }
+    
+    Point player_coords = player.GetCoords();
+    old_coords = coords;
+    
+    if ((player_coords.x + playerWidth >= home.x - area * tileSize / 2 + tileSize) &&
+        (player_coords.x - 1 <= home.x + area * tileSize / 2 + tileSize - 1) &&
+        (player_coords.y + playerHeight >= home.y - area * tileSize / 2 + tileSize / 2) &&
+        (player_coords.y < home.y + area * tileSize / 2 - 1 + tileSize / 2)) {
+        if (coords.x > player_coords.x + playerWidth) {
+            coords.x -= move_speed;
+            last_dir = MovementDir::LEFT;
+        } else if (coords.x + width < player_coords.x) {
+            coords.x += move_speed;
+            last_dir = MovementDir::RIGHT;
+        }
+        if (coords.y > player_coords.y + playerHeight) {
+            coords.y -= move_speed;
+        } else if (coords.y + height < player_coords.y) {
+            coords.y += move_speed;
+        }
+        
+        if ((coords.x + width + 1 >= player_coords.x) && (coords.x + width + 1 <= player_coords.x + playerWidth / 2) &&
+            (coords.y + height + 1 >= player_coords.y) && (coords.y + height + 1 <= player_coords.y + playerHeight)) {
+            coords.x = player_coords.x - width;
+            last_dir = MovementDir::RIGHT;
+            return true;
+        }
+        if ((coords.x - 1 >= player_coords.x + playerWidth / 2) && (coords.x - 1 <= player_coords.x + playerWidth) &&
+            (coords.y + height + 1 >= player_coords.y) && (coords.y + height + 1 <= player_coords.y + playerHeight)) {
+            coords.x = player_coords.x + playerWidth;
+            last_dir = MovementDir::LEFT;
+            return true;
+        }
+        if ((coords.y + height + 1 >= player_coords.y) && (coords.y + height + 1 <= player_coords.y + playerHeight / 2) &&
+            (coords.x >= player_coords.x - width) && (coords.x <= player_coords.x + playerWidth)) {
+            coords.y = player_coords.y - height;
+            return true;
+        }
+        if ((coords.y - 1 >= player_coords.y + playerHeight / 2) && (coords.y - 1 <= player_coords.y + playerHeight) &&
+            (coords.x >= player_coords.x - width) && (coords.x <= player_coords.x + playerWidth)) {
+            coords.y = player_coords.y + playerWidth;
+            return true;
+        }
+        
+        return false;
+    }
+    
+    if ((coords.x != home.x) || (coords.y != home.y)) {
+        if (coords.x > home.x + move_speed) {
+            coords.x -= move_speed;
+            last_dir = MovementDir::LEFT;
+        } else if (coords.x < home.x - + move_speed) {
+            coords.x += move_speed;
+            last_dir = MovementDir::RIGHT;
+        }
+        if (coords.y > home.y + move_speed) {
+            coords.y -= move_speed;
+        } else if (coords.y < home.y - move_speed) {
+            coords.y += move_speed;
+        }
+    }
+    
+    return false;
+}
+
+void Wolf::Draw(Image &screen, Image &currentBackground) {
+    if (!active && (firing_count == 0)) {
+        return;
+    }
+    
+    if ((old_coords.x != coords.x) || (old_coords.y != coords.y)) {
+        for(int y = old_coords.y; y < old_coords.y + height; ++y)
+        {
+          for(int x = old_coords.x; x < old_coords.x + width; ++x)
+          {
+            screen.PutPixel(x, y, currentBackground.GetPixel(x, y));
+          }
+        }
+        if (switch_image == 3) {
+            current_image = (current_image + 1) % 5;
+        }
+        switch_image = (switch_image + 1) % 4;
+    }
+    
+    if (firing_count > 0) {
+        int image_x = ((firing_count - 1) / 4 % 9) * 235;
+        if (last_dir == MovementDir::RIGHT) {
+            for(int y = coords.y - 15; y < coords.y + 100; ++y)
+            {
+              for(int x = coords.x; x < coords.x + 235; ++x)
+              {
+                screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), wolf_firing_right.GetPixel(image_x + x - coords.x,
+                                                                                              99 - y + coords.y)));
+              }
+            }
+        } else {
+            for(int y = coords.y - 15; y < coords.y + 100; ++y)
+            {
+              for(int x = coords.x - 96; x < coords.x + 139; ++x)
+              {
+                screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), wolf_firing_left.GetPixel(image_x + x - coords.x + 96,
+                                                                                        99 - y + coords.y)));
+              }
+            }
+        }
+        firing_count -= 1;
+        if (firing_count == 0) {
+            active = true;
+        }
+        return;
+    }
+    
+    if ((coords.x >= home.x - move_speed) && (coords.x <= home.x + move_speed) &&
+        (coords.y >= home.y - move_speed) && (coords.y <= home.y + move_speed)) {
+        for(int y = coords.y; y < coords.y + height; ++y)
+        {
+          for(int x = coords.x; x < coords.x + width; ++x)
+          {
+            screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), wolf_sleeping.GetPixel(x - coords.x,
+                                                                  height - (y - coords.y) - 1)));
+          }
+        }
+    } else if (last_dir == MovementDir::LEFT) {
+        int image_x = current_image * width;
+        int image_y = 0;
+        for(int y = coords.y; y < coords.y + height; ++y)
+        {
+          for(int x = coords.x; x < coords.x + width; ++x)
+          {
+            screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), wolf_left.GetPixel(image_x + x - coords.x,
+                                                                  height + image_y - (y - coords.y) - 1)));
+          }
+        }
+    } else {
+        int image_x = current_image * width;
+        int image_y = 0;
+        for(int y = coords.y; y < coords.y + height; ++y)
+        {
+          for(int x = coords.x; x < coords.x + width; ++x)
+          {
+            screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), wolf_right.GetPixel(image_x + x - coords.x,
+                                                                  height + image_y - (y - coords.y) - 1)));
+          }
+        }
+    }
+}
+
+void Wolf::EraseWolfAndPlayer(Player &player, Image &screen, Image &currentBackground) {
+    if (last_dir == MovementDir::RIGHT) {
+        for(int y = coords.y - 15; y < coords.y + 100; ++y)
+        {
+          for(int x = coords.x; x < coords.x + 235; ++x)
+          {
+            screen.PutPixel(x, y, currentBackground.GetPixel(x, y));
+          }
+        }
+    } else {
+        for(int y = coords.y - 15; y < coords.y + 100; ++y)
+        {
+          for(int x = coords.x - 96; x < coords.x + 139; ++x)
+          {
+              screen.PutPixel(x, y, currentBackground.GetPixel(x, y));
+          }
+        }
+    }
+    
+    Point pos = player.GetCoords();
+    for(int y = pos.y; y < pos.y + playerHeight; ++y) {
+      for(int x = pos.x; x < pos.x + playerWidth; ++x) {
+        screen.PutPixel(x, y, currentBackground.GetPixel(x, y));
+      }
+    }
+                              
 }

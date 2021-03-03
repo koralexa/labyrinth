@@ -294,6 +294,33 @@ void AddUnstableElements(std::string &room, Image &screen, Image &background, in
     }
 }
 
+void AddWolves(std::string &room, Image &screen, std::vector<Wolf> &wolves) {
+    Image wolf("../../Stray Cat/resources/wolf_sleeping.png");
+    
+    int screen_x;
+    int screen_y;
+    Point pos;
+    
+    for (int i = 0; i < room.size(); i++) {
+        switch (room[i]) {
+            case 'W':
+                pos = {.x = i % 16 * tileSize - tileSize / 2, .y = (15 - i / 16) * tileSize};
+                wolves.push_back(Wolf(pos));
+                for (int y = 0; y < tileSize; y++) {
+                    for (int x = 0; x < tileSize * 2; x++) {
+                        screen_x = pos.x + x;
+                        screen_y = pos.y + y;
+                        screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y),
+                                                                  wolf.GetPixel(x, tileSize - y - 1)));
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 Pixel TransformPixel(Pixel p1, Pixel p2, int counter) {
     Pixel new_p;
     if (p1.r > p2.r) {
@@ -412,13 +439,15 @@ int main(int argc, char** argv)
     Image gameOver("../../Stray Cat/resources/game_over.png");
     Image youWin("../../Stray Cat/resources/you_win.png");
     
-    int currentRoomNumber = 0;
+    int currentRoomNumber = 8;
     Image currentBackground("../../Stray Cat/resources/grass-background.png");
     MakeBackground(rooms[currentRoomNumber], currentBackground);
     
     Image img("../../Stray Cat/resources/grass-background.png");
     MakeBackground(rooms[currentRoomNumber], img);
+    std::vector<Wolf> wolves;
     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 0);
+    AddWolves(rooms[currentRoomNumber], img, wolves);
     
     for (int j = 0; j < img.Height(); j++) {
         for (int i = 0; i < img.Width(); i++) {
@@ -490,7 +519,47 @@ int main(int argc, char** argv)
         try {
             if (switch_level_count == 0) {
                 processPlayerMovement(player, rooms[currentRoomNumber], currentBackground, screenBuffer);
-                player.Draw(screenBuffer, currentBackground);
+                bool catched = false;
+                int wolf_number = 0;
+                for (int i = 0; i < wolves.size(); i++) {
+                    if (wolves[i].GetFiringCount() == 0) {
+                        if (wolves[i].Move(player, rooms[currentRoomNumber], currentBackground, screenBuffer)) {
+                            catched = true;
+                            wolf_number = i;
+                        }
+                        wolves[i].Draw(screenBuffer, currentBackground);
+                    }
+                }
+                if (catched) {
+                    player.DecreaseLives();
+                    player.SetActive(false);
+                    if (player.GetLives() > 0) {
+                        player.SetFallingCount(36);
+                        player.SetPlayerAction(PlayerAction::WOLF);
+                        for (int i = 0; i < wolves.size(); i++) {
+                            wolves[i].SetActive(false);
+                        }
+                    } else {
+                        player.SetDyingCount(32);
+                        for (int i = 0; i < wolves.size(); i++) {
+                            wolves[i].SetActive(false);
+                        }
+                    }
+                    wolves[wolf_number].SetFiringCount(36);
+                }
+                if (wolves[wolf_number].GetFiringCount() > 0) {
+                    wolves[wolf_number].EraseWolfAndPlayer(player, screenBuffer, currentBackground);
+                    player.Draw(screenBuffer, currentBackground, wolves);
+                    wolves[wolf_number].Draw(screenBuffer, currentBackground);
+                    if ((wolves[wolf_number].GetFiringCount() == 0) && (player.GetLives() == 0)) {
+                        for (int i = 0; i < wolves.size(); i++) {
+                            wolves[i].SetActive(false);
+                        }
+                        player.SetActive(false);
+                    }
+                } else {
+                    player.Draw(screenBuffer, currentBackground, wolves);
+                }
             } else {
                 switch_level_count -= 1;
             }
@@ -507,6 +576,9 @@ int main(int argc, char** argv)
                     screen_y = (WINDOW_HEIGHT - h) / 2;
                     timeToStart = 0;
                     finish_count = 32;
+                    for (int i = 0; i < wolves.size(); i++) {
+                        wolves[i].SetActive(false);
+                    }
                     break;
                 case 'W':
                     h = youWin.Height();
@@ -514,12 +586,17 @@ int main(int argc, char** argv)
                     screen_x = (WINDOW_WIDTH - w) / 2;
                     screen_y = (WINDOW_HEIGHT - h) / 2;
                     win_count = 32;
+                    for (int i = 0; i < wolves.size(); i++) {
+                        wolves[i].SetActive(false);
+                    }
                     break;
                 case 'U':
                     currentRoomNumber -= 6;
                     MakeBackground(rooms[currentRoomNumber], currentBackground);
                     MakeBackground(rooms[currentRoomNumber], img);
                     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
+                    wolves.clear();
+                    AddWolves(rooms[currentRoomNumber], img, wolves);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -532,6 +609,8 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomNumber], currentBackground);
                     MakeBackground(rooms[currentRoomNumber], img);
                     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
+                    wolves.clear();
+                    AddWolves(rooms[currentRoomNumber], img, wolves);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -544,6 +623,8 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomNumber], currentBackground);
                     MakeBackground(rooms[currentRoomNumber], img);
                     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
+                    wolves.clear();
+                    AddWolves(rooms[currentRoomNumber], img, wolves);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -556,6 +637,8 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomNumber], currentBackground);
                     MakeBackground(rooms[currentRoomNumber], img);
                     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
+                    AddWolves(rooms[currentRoomNumber], img, wolves);
+                    wolves.clear();
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
@@ -565,6 +648,32 @@ int main(int argc, char** argv)
                     break;
                 case 'S':
                     timeToStart = currentFrame + 0.7;
+                    break;
+                case 'A':
+                    player.SetGettingOutCount(36);
+                    switch (player.GetLastPortal()) {
+                      case PlayerAction::PORTAL_LEFT:
+                          player.SetCoords(WINDOW_WIDTH - tileSize - 1, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                          player.SetCurrentImage(0);
+                          break;
+                      case PlayerAction::PORTAL_RIGHT:
+                          player.SetCoords(0, WINDOW_HEIGHT / 2 - playerHeight / 2 - tileSize / 2);
+                          player.SetCurrentImage(8);
+                          break;
+                      case PlayerAction::PORTAL_UP:
+                          player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, 0);
+                          player.SetCurrentImage(16);
+                          break;
+                      case PlayerAction::PORTAL_DOWN:
+                          player.SetCoords(WINDOW_WIDTH / 2 - tileSize / 2, WINDOW_HEIGHT - tileSize - playerHeight - 1);
+                          player.SetCurrentImage(24);
+                          break;
+                      default:
+                          break;
+                    }
+                    for (int i = 0; i < wolves.size(); i++) {
+                        wolves[i].SetActive(true);
+                    }
                     break;
                 default:
                     break;
