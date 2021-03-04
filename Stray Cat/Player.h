@@ -4,6 +4,7 @@
 #include "Image.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 constexpr int playerWidth = 64;
 constexpr int playerHeight = 98;
@@ -49,11 +50,12 @@ struct Player
 
 
   bool Moved() const;
-  void ProcessInput(MovementDir dir, std::string &room, Image &currentBackground, Image &screen);
+  void ProcessInput(MovementDir dir, std::string &room, Image &currentBackground, Image &screen, std::vector<Wolf> &wolves);
   void Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wolves);
   
   bool GetActive() { return active; }
   void SetActive(bool a) { active = a; }
+  void SetWaiting(bool w) { waiting = w; }
   Point GetCoords() { return coords; }
   void SetCoords(int x, int y) { coords.x = x; coords.y = y; }
   void DecreaseLives() { lives -= 1; }
@@ -74,8 +76,9 @@ private:
   Pixel color {.r = 255, .g = 255, .b = 0, .a = 255};
   int move_speed = 4;
   int carrots = 0;
-  int lives = 3;
+  int lives = 5;
   bool active = true;
+  bool waiting = false;
   int current_image = 8;
   int switch_image = 3;
   enum PlayerAction player_action = PlayerAction::MOVE;
@@ -89,8 +92,8 @@ private:
 
 struct Wolf
 {
-  explicit Wolf(Point pos = {.x = 10, .y = 10}) :
-                  coords(pos), old_coords(pos), home(coords) {};
+  explicit Wolf(int a, char c, Point pos = {.x = 10, .y = 10}) :
+                  coords(pos), old_coords(pos), home(coords), area(a), home_char(c) {};
 
   bool Move(Player &player, std::string &room, Image &currentBackground, Image &screen);
   void Draw(Image &screen, Image &currentBackground);
@@ -107,8 +110,9 @@ private:
   Point old_coords {.x = 10, .y = 10};
   int width = 128;
   int height = 64;
-  int move_speed = 2;
+  int move_speed = 1;
   int area = 5;
+  char home_char = '0';
   int switch_image = 3;
   Point home {.x = 10, .y = 10};
   MovementDir last_dir = MovementDir::LEFT;

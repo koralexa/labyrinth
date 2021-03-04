@@ -14,8 +14,8 @@
             filePath = "Stray Cat/main.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "524"
-            endingLineNumber = "524"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
             landmarkName = "main(argc, argv)"
             landmarkType = "9">
          </BreakpointContent>
@@ -30,25 +30,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1025"
-            endingLineNumber = "1025"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D211C370-8BA9-4EAA-BDAE-9AD7C1E0B4AF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Stray Cat/Player.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1026"
-            endingLineNumber = "1026"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1036"
+            endingLineNumber = "1036"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,25 +46,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1019"
-            endingLineNumber = "1019"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AE985353-E736-4F96-854E-9CAF17BECF95"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Stray Cat/Player.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1027"
-            endingLineNumber = "1027"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1025"
+            endingLineNumber = "1025"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +62,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1082"
-            endingLineNumber = "1082"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1178"
+            endingLineNumber = "1178"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,9 +78,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1040"
-            endingLineNumber = "1040"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1106"
+            endingLineNumber = "1106"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -126,9 +94,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1028"
-            endingLineNumber = "1028"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1039"
+            endingLineNumber = "1039"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,9 +110,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1029"
-            endingLineNumber = "1029"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1040"
+            endingLineNumber = "1040"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,9 +126,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1033"
-            endingLineNumber = "1033"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1044"
+            endingLineNumber = "1044"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,9 +142,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1032"
-            endingLineNumber = "1032"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1043"
+            endingLineNumber = "1043"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -190,8 +158,8 @@
             filePath = "Stray Cat/main.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "561"
-            endingLineNumber = "561"
+            startingLineNumber = "591"
+            endingLineNumber = "591"
             landmarkName = "main(argc, argv)"
             landmarkType = "9">
          </BreakpointContent>
@@ -206,9 +174,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1042"
-            endingLineNumber = "1042"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1108"
+            endingLineNumber = "1108"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,9 +190,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1046"
-            endingLineNumber = "1046"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1112"
+            endingLineNumber = "1112"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,9 +206,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1140"
-            endingLineNumber = "1140"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1236"
+            endingLineNumber = "1236"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -254,9 +222,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1151"
-            endingLineNumber = "1151"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1247"
+            endingLineNumber = "1247"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -270,9 +238,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1128"
-            endingLineNumber = "1128"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1224"
+            endingLineNumber = "1224"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -286,9 +254,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "911"
-            endingLineNumber = "911"
-            landmarkName = "Player::Draw(screen, currentBackground, wolves)"
+            startingLineNumber = "917"
+            endingLineNumber = "917"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -302,9 +270,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "996"
-            endingLineNumber = "996"
-            landmarkName = "Player::Draw(screen, currentBackground, wolves)"
+            startingLineNumber = "1002"
+            endingLineNumber = "1002"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -318,9 +286,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1008"
-            endingLineNumber = "1008"
-            landmarkName = "Player::Draw(screen, currentBackground, wolves)"
+            startingLineNumber = "1014"
+            endingLineNumber = "1014"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -334,9 +302,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1084"
-            endingLineNumber = "1084"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1180"
+            endingLineNumber = "1180"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -350,9 +318,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1113"
-            endingLineNumber = "1113"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1209"
+            endingLineNumber = "1209"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -366,9 +334,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1117"
-            endingLineNumber = "1117"
-            landmarkName = "Wolf::Draw(screen, currentBackground)"
+            startingLineNumber = "1213"
+            endingLineNumber = "1213"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -382,9 +350,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1047"
-            endingLineNumber = "1047"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1113"
+            endingLineNumber = "1113"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -398,9 +366,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1051"
-            endingLineNumber = "1051"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1117"
+            endingLineNumber = "1117"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -414,9 +382,9 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1052"
-            endingLineNumber = "1052"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1118"
+            endingLineNumber = "1118"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -430,10 +398,74 @@
             filePath = "Stray Cat/Player.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1057"
-            endingLineNumber = "1057"
-            landmarkName = "Wolf::Move(player, room, currentBackground, screen)"
+            startingLineNumber = "1123"
+            endingLineNumber = "1123"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38702F9F-29B7-4F6C-BD32-AE17BA282CF2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stray Cat/Player.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1225"
+            endingLineNumber = "1225"
+            landmarkName = "Player::ProcessInput(dir, room, currentBackground, screen, wolves)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "939445E6-E8D5-4A1A-8C74-63CD22925724"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stray Cat/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "555"
+            endingLineNumber = "555"
+            landmarkName = "main(argc, argv)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9816601C-D5B0-4855-B078-3479332071D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stray Cat/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "ReadFileToString(path, currentRoomNumber, player, iter)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4498B2E-C1DD-4CDB-850C-D0A9349304F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stray Cat/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "ReadFileToString(path, currentRoomNumber, player, iter)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

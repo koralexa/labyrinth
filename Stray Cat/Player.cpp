@@ -487,7 +487,7 @@ PlayerAction CheckTilesRight(int move_dist, Point old_coords, std::string &room,
     return PlayerAction::MOVE;
 }
 
-void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBackground, Image &screen)
+void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBackground, Image &screen, std::vector<Wolf> &wolves)
 {
   int move_dist = move_speed * 1;
     
@@ -615,7 +615,9 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           DrawCarrots(screen);
           break;
       case PlayerAction::HEART:
-          lives += 1;
+          if (lives < 8) {
+              lives += 1;
+          }
           DrawLives(screen);
           break;
       case PlayerAction::DIE:
@@ -623,8 +625,12 @@ void Player::ProcessInput(MovementDir dir, std::string &room, Image &currentBack
           DrawLives(screen);
           active = false;
           if (lives > 0) {
+              waiting = true;
               throw ('S');
           } else {
+              for (int i = 0; i < wolves.size(); i++) {
+                  wolves[i].SetActive(false);
+              }
               dying_count = 32;
           }
           break;
@@ -773,7 +779,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
   DrawLives(screen);
   DrawCarrots(screen);
 
-  if (active) {
+  if (active || waiting) {
       int image_x = (current_image % 8) * playerWidth;
       int image_y = (current_image / 8) * (playerHeight + 1);
       for(int y = coords.y; y < coords.y + playerHeight; ++y)
@@ -1017,22 +1023,82 @@ bool Wolf::Move(Player &player, std::string &room, Image &currentBackground, Ima
     
     Point player_coords = player.GetCoords();
     old_coords = coords;
+    int tile_x;
+    int tile_y;
     
-    if ((player_coords.x + playerWidth >= home.x - area * tileSize / 2 + tileSize) &&
-        (player_coords.x - 1 <= home.x + area * tileSize / 2 + tileSize - 1) &&
-        (player_coords.y + playerHeight >= home.y - area * tileSize / 2 + tileSize / 2) &&
-        (player_coords.y < home.y + area * tileSize / 2 - 1 + tileSize / 2)) {
+    int x_changed = 0;
+    int y_changed = 0;
+    
+    if ((player_coords.x + playerWidth - 1 > home.x - area * tileSize / 2 + tileSize) &&
+        (player_coords.x - 1 < home.x + area * tileSize / 2 + tileSize - 1) &&
+        (player_coords.y + playerHeight - 1 > home.y - area * tileSize / 2 + tileSize / 2) &&
+        (player_coords.y - 1 < home.y + area * tileSize / 2 - 1 + tileSize / 2)) {
         if (coords.x > player_coords.x + playerWidth) {
-            coords.x -= move_speed;
+            x_changed = -1;
             last_dir = MovementDir::LEFT;
         } else if (coords.x + width < player_coords.x) {
-            coords.x += move_speed;
+            x_changed = 1;
             last_dir = MovementDir::RIGHT;
         }
         if (coords.y > player_coords.y + playerHeight) {
-            coords.y -= move_speed;
+            y_changed = -1;
         } else if (coords.y + height < player_coords.y) {
-            coords.y += move_speed;
+            y_changed = 1;
+        }
+        
+        if (x_changed && y_changed) {
+            coords.x += move_speed * x_changed;
+            coords.y += move_speed * y_changed;
+        } else if (x_changed) {
+            coords.x += move_speed * x_changed * 2;
+        } else if (y_changed) {
+            coords.y += move_speed * y_changed * 2;
+        }
+        
+        tile_x = (coords.x) / tileSize;
+        tile_y = 15 - coords.y / tileSize; // new left down tile of wolf
+        if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+            ((coords.y % 16 != 0) && (room[(tile_y - 1) * 16 + tile_y] != '.') &&
+             (room[(tile_y - 1) * 16 + tile_y] != home_char))) {
+            if (y_changed) {
+                coords.x -= move_speed * x_changed;
+            } else {
+                coords.x -= move_speed * x_changed * 2;
+            }
+        }
+        tile_x = (coords.x + width - 1) / tileSize;
+        tile_y = 15 - coords.y / tileSize; // new right down tile of wolf
+        if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+            ((coords.y % 16 != 0) && (room[(tile_y - 1) * 16 + tile_y] != '.') &&
+             (room[(tile_y - 1) * 16 + tile_y] != home_char))) {
+            if (y_changed) {
+                coords.x -= move_speed * x_changed;
+            } else {
+                coords.x -= move_speed * x_changed * 2;
+            }
+        }
+        tile_x = (coords.x) / tileSize;
+        tile_y = 15 - (coords.y + height - 1) / tileSize; // new left up tile of wolf
+        if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+            ((room[tile_y * 16 + tile_x + 1] != '.') && (room[tile_y * 16 + tile_x + 1] != home_char)) ||
+            ((coords.x % 16 != 0) && (room[tile_y * 16 + tile_x + 2] != '.') &&
+             (room[tile_y * 16 + tile_x + 2] != home_char))) {
+            if (x_changed) {
+                coords.y -= move_speed * y_changed;
+            } else {
+                coords.y -= move_speed * y_changed * 2;
+            }
+        }
+        tile_y = 15 - coords.y / tileSize; // new left down tile of wolf
+        if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+            ((room[tile_y * 16 + tile_x + 1] != '.') && (room[tile_y * 16 + tile_x + 1] != home_char)) ||
+            ((coords.x % 16 != 0) && (room[tile_y * 16 + tile_x + 2] != '.') &&
+             (room[tile_y * 16 + tile_x + 2] != home_char))) {
+            if (x_changed) {
+                coords.y -= move_speed * y_changed;
+            } else {
+                coords.y -= move_speed * y_changed * 2;
+            }
         }
         
         if ((coords.x + width + 1 >= player_coords.x) && (coords.x + width + 1 <= player_coords.x + playerWidth / 2) &&
@@ -1063,17 +1129,47 @@ bool Wolf::Move(Player &player, std::string &room, Image &currentBackground, Ima
     
     if ((coords.x != home.x) || (coords.y != home.y)) {
         if (coords.x > home.x + move_speed) {
-            coords.x -= move_speed;
+            coords.x -= move_speed * 2;
             last_dir = MovementDir::LEFT;
         } else if (coords.x < home.x - + move_speed) {
-            coords.x += move_speed;
+            coords.x += move_speed * 2;
             last_dir = MovementDir::RIGHT;
         }
         if (coords.y > home.y + move_speed) {
-            coords.y -= move_speed;
+            coords.y -= move_speed * 2;
         } else if (coords.y < home.y - move_speed) {
-            coords.y += move_speed;
+            coords.y += move_speed * 2;
         }
+    }
+    
+    tile_x = (coords.x) / tileSize;
+    tile_y = 15 - coords.y / tileSize; // new left down tile of wolf
+    if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+        ((coords.y % 16 != 0) && (room[(tile_y - 1) * 16 + tile_y] != '.') &&
+         (room[(tile_y - 1) * 16 + tile_y] != home_char))) {
+          coords.x += move_speed * 2;
+    }
+    tile_x = (coords.x + width - 1) / tileSize;
+    tile_y = 15 - coords.y / tileSize; // new right down tile of wolf
+    if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+        ((coords.y % 16 != 0) && (room[(tile_y - 1) * 16 + tile_y] != '.') &&
+         (room[(tile_y - 1) * 16 + tile_y] != home_char))) {
+          coords.x -= move_speed * 2;
+    }
+    tile_x = (coords.x) / tileSize;
+    tile_y = 15 - (coords.y + height - 1) / tileSize; // new left up tile of wolf
+    if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+        ((room[tile_y * 16 + tile_x + 1] != '.') && (room[tile_y * 16 + tile_x + 1] != home_char)) ||
+        ((coords.x % 16 != 0) && (room[tile_y * 16 + tile_x + 2] != '.') &&
+         (room[tile_y * 16 + tile_x + 2] != home_char))) {
+        coords.y -= move_speed * 2;
+    }
+    tile_y = 15 - coords.y / tileSize; // new left down tile of wolf
+    if (((room[tile_y * 16 + tile_x] != '.') && (room[tile_y * 16 + tile_x] != home_char)) ||
+        ((room[tile_y * 16 + tile_x + 1] != '.') && (room[tile_y * 16 + tile_x + 1] != home_char)) ||
+        ((coords.x % 16 != 0) && (room[tile_y * 16 + tile_x + 2] != '.') &&
+         (room[tile_y * 16 + tile_x + 2] != home_char))) {
+        coords.y += move_speed * 2;
     }
     
     return false;

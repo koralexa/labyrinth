@@ -54,19 +54,19 @@ void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, in
     }
 }
 
-void processPlayerMovement(Player &player, std::string &room, Image &currentBackground, Image &screen)
+void processPlayerMovement(Player &player, std::string &room, Image &currentBackground, Image &screen, std::vector<Wolf> &wolves)
 {
     if (!player.GetActive()) {
         return;
     }
     if (Input.keys[GLFW_KEY_W])
-        player.ProcessInput(MovementDir::UP, room, currentBackground, screen);
+        player.ProcessInput(MovementDir::UP, room, currentBackground, screen, wolves);
     else if (Input.keys[GLFW_KEY_S])
-        player.ProcessInput(MovementDir::DOWN, room, currentBackground, screen);
+        player.ProcessInput(MovementDir::DOWN, room, currentBackground, screen, wolves);
     if (Input.keys[GLFW_KEY_A])
-        player.ProcessInput(MovementDir::LEFT, room, currentBackground, screen);
+        player.ProcessInput(MovementDir::LEFT, room, currentBackground, screen, wolves);
     else if (Input.keys[GLFW_KEY_D])
-        player.ProcessInput(MovementDir::RIGHT, room, currentBackground, screen);
+        player.ProcessInput(MovementDir::RIGHT, room, currentBackground, screen, wolves);
 }
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)
@@ -128,16 +128,24 @@ int initGL()
     return 0;
 }
 
-std::string ReadFileToString(const char * path) {
+std::string ReadFileToString(const char * path, int &currentRoomNumber, Player &player, int iter) {
     std::ifstream in(path);
     std::string s;
     
     if (in.is_open()) {
         char c;
+        int count = 0;
         while (in.get(c)) {
             if (c != '\n') {
                 s.push_back(c);
+            } else {
+                count--;
             }
+            if (c == '@') {
+                player.SetCoords(count % 16 * tileSize, (15 - count / 16) * tileSize + (playerHeight - tileSize) / 2);
+                currentRoomNumber = iter;
+            }
+            count++;
         }
     }
     in.close();
@@ -296,24 +304,40 @@ void AddUnstableElements(std::string &room, Image &screen, Image &background, in
 
 void AddWolves(std::string &room, Image &screen, std::vector<Wolf> &wolves) {
     Image wolf("../../Stray Cat/resources/wolf_sleeping.png");
-    
-    int screen_x;
-    int screen_y;
     Point pos;
     
     for (int i = 0; i < room.size(); i++) {
         switch (room[i]) {
-            case 'W':
+            case '0':
+            case '1':
+            case '2':
+            case '3':
                 pos = {.x = i % 16 * tileSize - tileSize / 2, .y = (15 - i / 16) * tileSize};
-                wolves.push_back(Wolf(pos));
-                for (int y = 0; y < tileSize; y++) {
-                    for (int x = 0; x < tileSize * 2; x++) {
-                        screen_x = pos.x + x;
-                        screen_y = pos.y + y;
-                        screen.PutPixel(screen_x, screen_y, Blend(screen.GetPixel(screen_x, screen_y),
-                                                                  wolf.GetPixel(x, tileSize - y - 1)));
-                    }
-                }
+                wolves.push_back(Wolf(3, '3', pos));
+                break;
+            case '4':
+                pos = {.x = i % 16 * tileSize, .y = (15 - i / 16) * tileSize + tileSize / 2};
+                wolves.push_back(Wolf(4, '4', pos));
+                break;
+            case '5':
+                pos = {.x = i % 16 * tileSize - tileSize / 2, .y = (15 - i / 16) * tileSize};
+                wolves.push_back(Wolf(5, '5', pos));
+                break;
+            case '6':
+                pos = {.x = i % 16 * tileSize, .y = (15 - i / 16) * tileSize + tileSize / 2};
+                wolves.push_back(Wolf(6, '6', pos));
+                break;
+            case '7':
+                pos = {.x = i % 16 * tileSize - tileSize / 2, .y = (15 - i / 16) * tileSize};
+                wolves.push_back(Wolf(7, '7', pos));
+                break;
+            case '8':
+                pos = {.x = i % 16 * tileSize, .y = (15 - i / 16) * tileSize + tileSize / 2};
+                wolves.push_back(Wolf(8, '8', pos));
+                break;
+            case '9':
+                pos = {.x = i % 16 * tileSize - tileSize / 2, .y = (15 - i / 16) * tileSize};
+                wolves.push_back(Wolf(9, '9', pos));
                 break;
             default:
                 break;
@@ -379,56 +403,59 @@ int main(int argc, char** argv)
     
     Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
     
-    std::string plan = ReadFileToString("../../Stray Cat/rooms/plan.txt");
-    
+    int currentRoomNumber = 0;
+    std::string plan = ReadFileToString("../../Stray Cat/rooms/plan.txt", currentRoomNumber, player, 0);
     std::vector<std::string> rooms;
     
     for (int i = 0; i < 36; i++) {
         switch (plan[i]) {
             case 'A':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/A.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/A.txt", currentRoomNumber, player, i));
                 break;
             case 'B':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/B.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/B.txt", currentRoomNumber, player, i));
                 break;
             case 'C':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/C.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/C.txt", currentRoomNumber, player, i));
                 break;
             case 'D':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/D.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/D.txt", currentRoomNumber, player, i));
                 break;
             case 'E':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/E.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/E.txt", currentRoomNumber, player, i));
                 break;
             case 'F':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/F.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/F.txt", currentRoomNumber, player, i));
                 break;
             case 'G':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/G.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/G.txt", currentRoomNumber, player, i));
                 break;
             case 'H':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/H.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/H.txt", currentRoomNumber, player, i));
                 break;
             case 'I':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/I.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/I.txt", currentRoomNumber, player, i));
                 break;
             case 'J':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/J.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/J.txt", currentRoomNumber, player, i));
                 break;
             case 'K':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/K.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/K.txt", currentRoomNumber, player, i));
                 break;
             case 'L':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/L.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/L.txt", currentRoomNumber, player, i));
                 break;
             case 'M':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/M.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/M.txt", currentRoomNumber, player, i));
                 break;
             case 'N':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/N.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/N.txt", currentRoomNumber, player, i));
+                break;
+            case 'S':
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/S.txt", currentRoomNumber, player, i));
                 break;
             case 'W':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/W.txt"));
+                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/W.txt", currentRoomNumber, player, i));
                 break;
             default:
                 rooms.push_back("");
@@ -439,7 +466,6 @@ int main(int argc, char** argv)
     Image gameOver("../../Stray Cat/resources/game_over.png");
     Image youWin("../../Stray Cat/resources/you_win.png");
     
-    int currentRoomNumber = 8;
     Image currentBackground("../../Stray Cat/resources/grass-background.png");
     MakeBackground(rooms[currentRoomNumber], currentBackground);
     
@@ -467,6 +493,7 @@ int main(int argc, char** argv)
     int finish_count = 0;
     int win_count = 0;
     int switch_level_count = 0;
+    int wolf_number = -1;
     
         //game loop
     while (!glfwWindowShouldClose(window))
@@ -485,6 +512,7 @@ int main(int argc, char** argv)
         
         if (!player.GetActive() && (currentFrame > timeToStart) && (timeToStart != 0)) {
             player.SetActive(true);
+            player.SetWaiting(false);
             timeToStart = 0;
         }
         
@@ -518,9 +546,11 @@ int main(int argc, char** argv)
         
         try {
             if (switch_level_count == 0) {
-                processPlayerMovement(player, rooms[currentRoomNumber], currentBackground, screenBuffer);
+                processPlayerMovement(player, rooms[currentRoomNumber], currentBackground, screenBuffer, wolves);
                 bool catched = false;
-                int wolf_number = 0;
+                if ((wolf_number != -1) && (wolves[wolf_number].GetFiringCount() == 0)) {
+                    wolf_number = -1;
+                }
                 for (int i = 0; i < wolves.size(); i++) {
                     if (wolves[i].GetFiringCount() == 0) {
                         if (wolves[i].Move(player, rooms[currentRoomNumber], currentBackground, screenBuffer)) {
@@ -547,7 +577,7 @@ int main(int argc, char** argv)
                     }
                     wolves[wolf_number].SetFiringCount(36);
                 }
-                if (wolves[wolf_number].GetFiringCount() > 0) {
+                if ((wolf_number >= 0) && (wolves[wolf_number].GetFiringCount() > 0)) {
                     wolves[wolf_number].EraseWolfAndPlayer(player, screenBuffer, currentBackground);
                     player.Draw(screenBuffer, currentBackground, wolves);
                     wolves[wolf_number].Draw(screenBuffer, currentBackground);
@@ -637,8 +667,8 @@ int main(int argc, char** argv)
                     MakeBackground(rooms[currentRoomNumber], currentBackground);
                     MakeBackground(rooms[currentRoomNumber], img);
                     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 4);
-                    AddWolves(rooms[currentRoomNumber], img, wolves);
                     wolves.clear();
+                    AddWolves(rooms[currentRoomNumber], img, wolves);
                     player.DrawCarrots(img);
                     player.DrawLives(img);
                     switch_level_count = 16;
