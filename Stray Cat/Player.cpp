@@ -3,35 +3,35 @@
 #include <iostream>
 #include <vector>
 
-Image score_carrot("../../Stray Cat/resources/score_carrot.png");
+Image score_carrot("./resources/score_carrot.png");
 
-Image zero("../../Stray Cat/resources/0.png");
-Image one("../../Stray Cat/resources/1.png");
-Image two("../../Stray Cat/resources/2.png");
-Image three("../../Stray Cat/resources/3.png");
-Image four("../../Stray Cat/resources/4.png");
-Image five("../../Stray Cat/resources/5.png");
-Image six("../../Stray Cat/resources/6.png");
-Image seven("../../Stray Cat/resources/7.png");
-Image eight("../../Stray Cat/resources/8.png");
-Image nine("../../Stray Cat/resources/9.png");
-Image slash("../../Stray Cat/resources/slash.png");
+Image zero("./resources/0.png");
+Image one("./resources/1.png");
+Image two("./resources/2.png");
+Image three("./resources/3.png");
+Image four("./resources/4.png");
+Image five("./resources/5.png");
+Image six("./resources/6.png");
+Image seven("./resources/7.png");
+Image eight("./resources/8.png");
+Image nine("./resources/9.png");
+Image slash("./resources/slash.png");
 
-Image full_heart("../../Stray Cat/resources/full_heart.png");
-Image heart("../../Stray Cat/resources/heart.png");
+Image full_heart("./resources/full_heart.png");
+Image heart("./resources/heart.png");
 
-Image Bobby_going("../../Stray Cat/resources/Bobby_going.png");
-Image Bobby_falling("../../Stray Cat/resources/Bobby_falling.png");
-Image Bobby_dying("../../Stray Cat/resources/Bobby_dying.png");
+Image Bobby_going("./resources/Bobby_going.png");
+Image Bobby_falling("./resources/Bobby_falling.png");
+Image Bobby_dying("./resources/Bobby_dying.png");
 
-Image portals("../../Stray Cat/resources/portals.png");
-Image finish_portals("../../Stray Cat/resources/finish_portals.png");
+Image portals("./resources/portals.png");
+Image finish_portals("./resources/finish_portals.png");
 
-Image wolf_left("../../Stray Cat/resources/wolf_left.png");
-Image wolf_right("../../Stray Cat/resources/wolf_right.png");
-Image wolf_sleeping("../../Stray Cat/resources/wolf_sleeping.png");
-Image wolf_firing_left("../../Stray Cat/resources/wolf_firing_left.png");
-Image wolf_firing_right("../../Stray Cat/resources/wolf_firing_right.png");
+Image wolf_left("./resources/wolf_left.png");
+Image wolf_right("./resources/wolf_right.png");
+Image wolf_sleeping("./resources/wolf_sleeping.png");
+Image wolf_firing_left("./resources/wolf_firing_left.png");
+Image wolf_firing_right("./resources/wolf_firing_right.png");
 
 bool Player::Moved() const
 {
@@ -794,11 +794,11 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
       int image_x;
       int image_y;
       if (falling_count > 20) {
-          image_x = ((36 - falling_count + 1) / 2) * (tileSize * 2 + 6);
+          image_x = ((36 - falling_count + 1) / 2) * (tileSize * 2);
       } else if (falling_count > 6) {
-          image_x = (7 - ((22 - falling_count + 1) / 2)) * (tileSize * 2 + 6);
+          image_x = (7 - ((22 - falling_count + 1) / 2)) * (tileSize * 2);
       } else {
-          image_x = ((6 - falling_count + 1) / 2 + 1) * (tileSize * 2 + 6);
+          image_x = ((6 - falling_count + 1) / 2 + 1) * (tileSize * 2);
       }
       image_y = 0;
       switch (player_action) {
@@ -808,7 +808,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 7; x < tileSize * 9; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
-                                                                                      tileSize * 2 - (y - tileSize * 15) - 1)));
+                                                                                      tileSize * 2 - (y - tileSize * 15) + 1)));
                 }
               }
               break;
@@ -818,7 +818,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 7; x < tileSize * 9; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
-                                                                                      tileSize - y - 1)));
+                                                                                      tileSize - y + 1)));
                 }
               }
               break;
@@ -828,7 +828,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 15; x < tileSize * 16; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 15,
-                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                                                                                      tileSize * 2 - (y - tileSize * 7) + 1)));
                 }
               }
               break;
@@ -839,7 +839,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = 0; x < tileSize; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x,
-                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                                                                                      tileSize * 2 - (y - tileSize * 7) + 1)));
                 }
               }
               break;
@@ -849,7 +849,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 7; x < tileSize * 9; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), finish_portals.GetPixel(image_x + x - tileSize * 7,
-                                                                                             tileSize - y - 1)));
+                                                                                             tileSize - y + 1)));
                 }
               }
               break;
@@ -916,11 +916,11 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
       int image_x;
       int image_y;
       if (getting_out_count > 28) {
-          image_x = ((getting_out_count - 30 + 1) / 2) * (tileSize * 2 + 6);
+          image_x = ((getting_out_count - 30 + 1) / 2) * (tileSize * 2);
       } else if (getting_out_count > 14) {
-          image_x = ((30 - getting_out_count + 1) / 2) * (tileSize * 2 + 6);
+          image_x = ((30 - getting_out_count + 1) / 2) * (tileSize * 2);
       } else {
-          image_x = ((getting_out_count + 1) / 2 - 1) * (tileSize * 2 + 6);
+          image_x = ((getting_out_count + 1) / 2 - 1) * (tileSize * 2);
       }
       image_y = 0;
       switch (last_portal) {
@@ -930,7 +930,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 7; x < tileSize * 9; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
-                                                                                      tileSize - y - 1)));
+                                                                                      tileSize - y + 1)));
                 }
               }
               break;
@@ -940,7 +940,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 7; x < tileSize * 9; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 7,
-                                                                                      tileSize * 2 - (y - tileSize * 15) - 1)));
+                                                                                      tileSize * 2 - (y - tileSize * 15) + 1)));
                 }
               }
               break;
@@ -951,7 +951,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = 0; x < tileSize; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x,
-                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                                                                                      tileSize * 2 - (y - tileSize * 7) + 1)));
                 }
               }
               break;
@@ -961,7 +961,7 @@ void Player::Draw(Image &screen, Image &currentBackground, std::vector<Wolf> &wo
                 for(int x = tileSize * 15; x < tileSize * 16; ++x)
                 {
                   screen.PutPixel(x, y, Blend(screen.GetPixel(x, y), portals.GetPixel(image_x + x - tileSize * 15,
-                                                                                      tileSize * 2 - (y - tileSize * 7) - 1)));
+                                                                                      tileSize * 2 - (y - tileSize * 7) + 1)));
                 }
               }
               break;
@@ -1115,11 +1115,21 @@ bool Wolf::Move(Player &player, std::string &room, Image &currentBackground, Ima
         }
         if ((coords.y + height + 1 >= player_coords.y) && (coords.y + height + 1 <= player_coords.y + playerHeight / 2) &&
             (coords.x >= player_coords.x - width) && (coords.x <= player_coords.x + playerWidth)) {
+            if (player_coords.x < coords.x + tileSize / 2) {
+                last_dir = MovementDir::LEFT;
+            } else {
+                last_dir = MovementDir::RIGHT;
+            }
             coords.y = player_coords.y - height;
             return true;
         }
         if ((coords.y - 1 >= player_coords.y + playerHeight / 2) && (coords.y - 1 <= player_coords.y + playerHeight) &&
             (coords.x >= player_coords.x - width) && (coords.x <= player_coords.x + playerWidth)) {
+            if (player_coords.x < coords.x + tileSize / 2) {
+                last_dir = MovementDir::LEFT;
+            } else {
+                last_dir = MovementDir::RIGHT;
+            }
             coords.y = player_coords.y + playerWidth;
             return true;
         }

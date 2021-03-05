@@ -154,14 +154,14 @@ std::string ReadFileToString(const char * path, int &currentRoomNumber, Player &
 }
 
 void MakeBackground(std::string &room, Image &screen) {
-    Image bush("../../Stray Cat/resources/bush.png");
-    Image pit("../../Stray Cat/resources/pit.png");
-    Image portal_down("../../Stray Cat/resources/portal_down.png");
-    Image portal_up("../../Stray Cat/resources/portal_up.png");
-    Image portal_right("../../Stray Cat/resources/portal_right.png");
-    Image portal_left("../../Stray Cat/resources/portal_left.png");
-    Image finish_portal("../../Stray Cat/resources/finish_portal.png");
-    Image grass("../../Stray Cat/resources/grass-background.png");
+    Image bush("./resources/bush.png");
+    Image pit("./resources/pit.png");
+    Image portal_down("./resources/portal_down.png");
+    Image portal_up("./resources/portal_up.png");
+    Image portal_right("./resources/portal_right.png");
+    Image portal_left("./resources/portal_left.png");
+    Image finish_portal("./resources/finish_portal.png");
+    Image grass("./resources/grass-background.png");
     
     int screen_x;
     int screen_y;
@@ -252,8 +252,8 @@ void MakeBackground(std::string &room, Image &screen) {
 }
 
 void AddUnstableElements(std::string &room, Image &screen, Image &background, int image_no) {
-    Image carrots("../../Stray Cat/resources/carrots.png");
-    Image hearts("../../Stray Cat/resources/hearts.png");
+    Image carrots("./resources/carrots.png");
+    Image hearts("./resources/hearts.png");
     
     int screen_x;
     int screen_y;
@@ -303,7 +303,7 @@ void AddUnstableElements(std::string &room, Image &screen, Image &background, in
 }
 
 void AddWolves(std::string &room, Image &screen, std::vector<Wolf> &wolves) {
-    Image wolf("../../Stray Cat/resources/wolf_sleeping.png");
+    Image wolf("./resources/wolf_sleeping.png");
     Point pos;
     
     for (int i = 0; i < room.size(); i++) {
@@ -404,58 +404,58 @@ int main(int argc, char** argv)
     Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
     
     int currentRoomNumber = 0;
-    std::string plan = ReadFileToString("../../Stray Cat/rooms/plan.txt", currentRoomNumber, player, 0);
+    std::string plan = ReadFileToString("./rooms/plan.txt", currentRoomNumber, player, 0);
     std::vector<std::string> rooms;
     
     for (int i = 0; i < 36; i++) {
         switch (plan[i]) {
             case 'A':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/A.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/A.txt", currentRoomNumber, player, i));
                 break;
             case 'B':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/B.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/B.txt", currentRoomNumber, player, i));
                 break;
             case 'C':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/C.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/C.txt", currentRoomNumber, player, i));
                 break;
             case 'D':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/D.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/D.txt", currentRoomNumber, player, i));
                 break;
             case 'E':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/E.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/E.txt", currentRoomNumber, player, i));
                 break;
             case 'F':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/F.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/F.txt", currentRoomNumber, player, i));
                 break;
             case 'G':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/G.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/G.txt", currentRoomNumber, player, i));
                 break;
             case 'H':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/H.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/H.txt", currentRoomNumber, player, i));
                 break;
             case 'I':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/I.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/I.txt", currentRoomNumber, player, i));
                 break;
             case 'J':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/J.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/J.txt", currentRoomNumber, player, i));
                 break;
             case 'K':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/K.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/K.txt", currentRoomNumber, player, i));
                 break;
             case 'L':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/L.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/L.txt", currentRoomNumber, player, i));
                 break;
             case 'M':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/M.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/M.txt", currentRoomNumber, player, i));
                 break;
             case 'N':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/N.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/N.txt", currentRoomNumber, player, i));
                 break;
             case 'S':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/S.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/S.txt", currentRoomNumber, player, i));
                 break;
             case 'W':
-                rooms.push_back(ReadFileToString("../../Stray Cat/rooms/W.txt", currentRoomNumber, player, i));
+                rooms.push_back(ReadFileToString("./rooms/W.txt", currentRoomNumber, player, i));
                 break;
             default:
                 rooms.push_back("");
@@ -463,13 +463,13 @@ int main(int argc, char** argv)
         }
     }
     
-    Image gameOver("../../Stray Cat/resources/game_over.png");
-    Image youWin("../../Stray Cat/resources/you_win.png");
+    Image gameOver("./resources/game_over.png");
+    Image youWin("./resources/you_win.png");
     
-    Image currentBackground("../../Stray Cat/resources/grass-background.png");
+    Image currentBackground("./resources/grass-background.png");
     MakeBackground(rooms[currentRoomNumber], currentBackground);
     
-    Image img("../../Stray Cat/resources/grass-background.png");
+    Image img("./resources/grass-background.png");
     MakeBackground(rooms[currentRoomNumber], img);
     std::vector<Wolf> wolves;
     AddUnstableElements(rooms[currentRoomNumber], img, currentBackground, 0);
