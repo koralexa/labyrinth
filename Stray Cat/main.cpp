@@ -362,6 +362,11 @@ Pixel TransformPixel(Pixel p1, Pixel p2, int counter) {
     } else {
         new_p.b = p1.b + (p2.b - p1.b) / counter;
     }
+    if (p1.a > p2.a) {
+        new_p.a = p1.a - (p1.a - p2.a) / counter;
+    } else {
+        new_p.a = p1.a + (p2.a - p1.a) / counter;
+    }
     return new_p;
 }
 
